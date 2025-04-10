@@ -1,0 +1,285 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+
+
+
+ /*Construction Hero Section*/
+.construction-hero {
+    position: relative;
+    background-image: url('img/Civil-engineers.jpg'); /* Replace with your actual image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Make the section cover the entire viewport height */
+    padding: 0 40px; /* No vertical padding since we want to fill the whole viewport */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ /*Hero Content Styling with Opacity*/
+.hero-content {
+    text-align: left; /* Align text to the left */
+    max-width: 800px; /* Limit text width */
+    padding-left: 30px; /* Add padding on the left for the text */
+    background-color: rgba(0, 0, 0, 0.38); /* Semi-transparent background */
+    padding: 30px; /* Padding inside the content box */
+    border-radius: 10px; /* Optional: To make the box slightly rounded */
+    z-index: 1; /* Ensure text is above the background */
+}
+
+/* Text Styling */
+.construction-hero h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff; /* Bright white text color */
+}
+
+.construction-hero p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #ffffff; /* Bright white text color */
+}
+
+/* CTA Button Styling */
+.cta-button .btn {
+    background-color: #ff6600; /* Orange button color */
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button .btn:hover {
+    background-color: #e65500; /* Darker orange on hover */
+}
+
+
+
+
+
+/* Our Construction Software Solutions Section */
+.construction-solutions {
+    padding: 60px 80px; /* More padding on the left and right */
+    background-color: #f4f4f4; /* Light grey background */
+    text-align: center;
+}
+
+/* Heading Styling */
+.construction-solutions h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333; /* Dark grey text for the heading */
+}
+
+/* Paragraph Styling */
+.construction-solutions p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #555; /* Light dark grey text for the paragraph */
+}
+
+/* Container for the text and image */
+.solutions-container {
+    display: flex;
+    justify-content: center; /* Center both divs */
+    align-items: flex-start;
+    gap: 40px; /* Space between the left and right divs */
+    flex-wrap: wrap; /* Allow wrapping of divs for smaller screens */
+}
+
+/* Left div with text and icons */
+.solutions-text {
+    width: 100%; /* Full width on small screens */
+    max-width: 500px; /* Limit the width on larger screens */
+    text-align: left; /* Align text to the left */
+}
+
+/* Individual solution item */
+.solution-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1em;
+    text-align: left;
+}
+
+.solution-item i {
+    font-size: 1.5em;
+    margin-right: 10px; /* Small space between icon and text */
+    color: #ff6600; /* Icon color */
+}
+
+.solution-item p {
+    margin: 0;
+    color: #333; /* Dark grey text for the list items */
+}
+
+/* Right div with image */
+.solutions-image {
+    width: 100%; /* Full width on smaller screens */
+    max-width: 500px; /* Limit the width on larger screens */
+}
+
+.solutions-image img {
+    width: 100%; /* Make the image responsive */
+    height: auto;
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+    .solutions-container {
+        flex-direction: column;
+        text-align: center; /* Center the text on smaller screens */
+    }
+
+    .solutions-text, .solutions-image {
+        width: 100%; /* Full width */
+    }
+}
+
+
+
+
+/* Construction Solutions Section */
+.construction-solutions {
+    padding: 60px 80px;
+    background-color: #f4f4f4;
+}
+
+/* Each solution section */
+.solution {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(100%); /* Start from the right */
+    animation: slideIn 1s forwards;
+}
+
+/* Alternate the direction for every even solution */
+.solution:nth-child(even) {
+    flex-direction: row-reverse;
+    transform: translateX(-100%); /* Start from the left */
+}
+
+/* Animation to slide in */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Image styling */
+.solution img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.solution:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Text styling */
+.solution-text {
+    max-width: 600px;
+    padding: 20px;
+    text-align: left;
+    color: #333;
+}
+
+.solution-text h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.solution-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Icon styling */
+.solution-text .icon {
+    font-size: 2em;
+    color: #ff6600;
+    margin-right: 10px;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+    .solution {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .solution img {
+        max-width: 80%;
+    }
+
+    .solution-text {
+        max-width: 100%;
+        padding: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

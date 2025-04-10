@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    {%  block title %}
+  <title>Master</title>
+    {%  endblock %}
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href= " {%  static 'css/master.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+{% block extra_css %}{% endblock %}
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top container-fluid" id="navbar">
+    <div class="navbar-header">
+        <!-- Logo linking to the homepage (image) -->
+        <a class="navbar-brand" href="/"><img src="{% static 'img/mk.png' %}" alt="Brand Logo"></a>
+        <!-- Hamburger toggle button for small screens -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+            <!-- Navigation links -->
+            <li><a href="/home/">Home</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/services/">Services</a></li>
+            <li><a href="/contact/">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+
+{% block content %}
+	
+{% endblock %}
+
+
+
+<footer>
+    <div class="footer-container">
+        <!-- Services Column -->
+        <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+                <li>MVP Development</li>
+                <li>Mobile Development</li>
+                <li>Web Development</li>
+                <li>Startup & MVP Solutions</li>
+                <li>Enterprise Solutions</li>
+                <li>Dedicated Teams</li>
+                <li>IT Consulting</li>
+                <li>UI/UX Design</li>
+                <li>QA & Testing</li>
+                <li>Solution Architecture</li>
+                <li>AI Development</li>
+                <li>Custom Software Development</li>
+                <li>Outsourcing Software Development</li>
+            </ul>
+        </div>
+
+        <!-- Industries Column -->
+        <div class="footer-column">
+            <h3>Industries</h3>
+            <ul>
+                <li>Fintech</li>
+                <li>Stock Trading App Development</li>
+                <li>Insurance</li>
+                <li>Healthcare & Biotech</li>
+                <li>Healthcare App Development</li>
+                <li>Dental</li>
+                <li>Travel & Hospitality</li>
+                <li>eCommerce & Retail</li>
+                <li>Logistics & Transportation</li>
+                <li>Construction</li>
+                <li>Real Estate</li>
+            </ul>
+        </div>
+
+        <!-- Company Column -->
+        <div class="footer-column">
+            <h3>Company</h3>
+            <ul>
+                <li>About</li>
+                <li>Team</li>
+                <li>Clients</li>
+                <li>Case Study</li>
+                <li>Blog</li>
+                <li>News</li>
+                <li>eBooks</li>
+                <li>Careers</li>
+                <li>Social Responsibility</li>
+                <li>Anti-Fraud Statement</li>
+            </ul>
+        </div>
+
+        <!-- Contacts Column -->
+        <div class="footer-column">
+            <h3>Contacts</h3>
+            <ul>
+                <li>Email: <a href="mailto:info@technopick.net">mailto:info@technopick.net</a></li>
+                <li>0702795466</li>
+                <li>0714213413</li>
+                <li>Westland, Nairobi City, NRB 0100, NAIROBI</li>
+                <li><a href="mailto:info@technopick.net">Contact us</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+<script>
+  window.onscroll = function() {toggleNavbarBackground()};
+
+  function toggleNavbarBackground() {
+    var navbar = document.getElementById("navbar");
+    if (window.pageYOffset > 50) {  // Scroll 50px or more
+      navbar.classList.add("scrolled"); // Add white background and shadow
+    } else {
+      navbar.classList.remove("scrolled"); // Remove white background
+    }
+  }
+</script>
+
+<!-- Add Bootstrap's JS for toggling the navbar -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

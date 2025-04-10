@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+     <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .dummy-content {
+            height: 1500px;
+            background-color: #e0e0e0;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        /* Navbar Styles */
+        #navbar {
+            position: fixed;
+            top: -60px; /* Initially hide the navbar */
+            width: 100%;
+            background-color: rgba(51, 51, 51, 0.7); /* Translucent black background */
+            transition: top 0.3s; /* Smooth transition */
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px; /* Add space around the navbar */
+            box-sizing: border-box; /* Ensure padding doesn't affect width */
+        }
+
+        /* Logo on the left */
+        #navbar .logo img {
+            width: 40px; /* Logo size */
+            height: auto;
+            cursor: pointer;
+        }
+
+        /* Center the navigation links */
+        #navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Center the nav items */
+            gap: 20px; /* Space between links */
+            flex-grow: 1; /* Make sure it grows to fill available space */
+        }
+
+        #navbar ul li {
+            display: inline;
+        }
+
+        #navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold; /* Make nav links bold */
+            transition: color 0.3s ease; /* Smooth color transition on hover */
+        }
+
+        /* Hover effect for the navigation links */
+        #navbar ul li a:hover {
+            color: blue; /* Change color to blue when hovered */
+        }
+
+        /* "Get Started" button on the right */
+        #navbar .get-started {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for color changes */
+        }
+
+        /* Hover effect for the "Get Started" button */
+        #navbar .get-started:hover {
+            background-color: white; /* Change background color to white on hover */
+            color: red; /* Change text color to red on hover for better contrast */
+        }
+
+        #navbar.show {
+            top: 0; /* Show the navbar */
+        }
+
+        /* Hamburger Menu for Mobile */
+        #navbar .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        #navbar .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+        }
+
+        /* Mobile menu styles */
+        #navbar ul.mobile {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background-color: rgba(51, 51, 51, 0.9);
+            text-align: center;
+        }
+
+        #navbar ul.mobile li {
+            padding: 15px;
+            width: 100%;
+        }
+
+        #navbar ul.mobile li a {
+            font-size: 20px;
+        }
+
+        /* Media Query for Mobile */
+        @media screen and (max-width: 768px) {
+            #navbar ul {
+                display: none; /* Hide the links by default */
+                flex-direction: column;
+                width: 100%;
+                background-color: rgba(51, 51, 51, 0.9);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                text-align: center;
+            }
+
+            #navbar .hamburger {
+                display: flex; /* Show the hamburger icon on mobile */
+            }
+
+            #navbar.show-mobile ul {
+                display: flex; /* Show the mobile menu when toggled */
+            }
+        }
+    </style>
+</head>
+<body>
+
+ <!-- Navbar -->
+    <nav id="navbar">
+        <div class="logo">
+            <a href="home.html"><img src="img/logo.png" alt="Logo"></a>
+        </div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+        <a href="#contact" class="get-started">Get Started</a>
+        <!-- Hamburger Icon -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <!-- JavaScript to handle the scroll behavior and menu toggle -->
+    <script>
+        // Get the navbar element
+        const navbar = document.getElementById("navbar");
+        const hamburger = document.querySelector(".hamburger");
+        const menu = navbar.querySelector("ul");
+
+        // Add a scroll event listener to the window
+        let prevScrollPos = window.pageYOffset;
+        window.onscroll = function() {
+            let currentScrollPos = window.pageYOffset;
+
+            // If the user scrolls down, hide the navbar
+            if (prevScrollPos > currentScrollPos) {
+                navbar.classList.add("show");  // Show the navbar
+            } else {
+                navbar.classList.remove("show");  // Hide the navbar
+            }
+
+            prevScrollPos = currentScrollPos;
+        };
+
+        // Toggle mobile menu visibility
+        function toggleMenu() {
+            navbar.classList.toggle("show-mobile");
+        }
+    </script>
+
+
+<section class="about-hero">
+    <div class="about-content">
+        <h1>ABOUT TECHNOPICK</h1>
+        <p>We are a digital transformation consultancy and engineering company that delivers cutting-edge solutions for global organizations and technology startups. Since 2007, we have been helping companies and established brands reimagine their business through digitalization.</p>
+    </div>
+</section>
+
+
+
+<div class="mission-vision">
+    <h2>MISSION & VISION</h2>
+    <p>Our mission is to help enterprises accelerate adoption of new technologies, untangle complex issues that always emerge during digital evolution, and orchestrate ongoing innovation. Whether it is a consumer-oriented app or a transformative enterprise-class solution, the company leads the process from ideation and concept to delivery, and provides ongoing support through its IS360 framework.</p>
+</div>
+
+<!-- Our Clients Section -->
+<div class="our-clients-section">
+    <h2>Our Clients</h2>
+
+    <div class="clients-logos-wrapper">
+        <div class="clients-logos">
+            <!-- Repeat for 11 client logos -->
+            <div class="client-logo">
+                <img src="img/proteket.svg" alt="Client 1">
+            </div>
+            <div class="client-logo">
+                <img src="img/harkins.svg" alt="Client 2">
+            </div>
+            <div class="client-logo">
+                <img src="img/luxottica.svg" alt="Client 3">
+            </div>
+            <div class="client-logo">
+                <img src="img/mitsubishi-power.svg" alt="Client 4">
+            </div>
+            <div class="client-logo">
+                <img src="img/systima.svg" alt="Client 5">
+            </div>
+            <div class="client-logo">
+                <img src="img/intel.svg" alt="Client 6">
+            </div>
+            <div class="client-logo">
+                <img src="img/af-gruppen.svg" alt="Client 7">
+            </div>
+            <div class="client-logo">
+                <img src="img/euro-accident.svg" alt="Client 8">
+            </div>
+            <div class="client-logo">
+                <img src="img/fleet-nurse.svg" alt="Client 9">
+            </div>
+            <div class="client-logo">
+                <img src="img/harley.svg" alt="Client 10">
+            </div>
+            <div class="client-logo">
+                <img src="img/mitsubishi-power.svg" alt="Client 11">
+            </div>
+        </div>
+    </div>
+
+    <p>Looking for cost-effective and top-flight software development services, staff augmentation, or IT expert consultancy?</p>
+
+    <a href="contact.html">
+    <button class="cta-button">Become Our Client</button>
+</a>
+
+</div>
+
+
+
+<div class="technology-excellence">
+    <h2>Technology Excellence</h2>
+    <div class="cards-container">
+        <!-- Card 1: Software Engineering -->
+        <div class="card">
+            <div class="card-front">
+                <img src="img/software.jpeg" alt="Software Engineering">
+                <div class="card-content">
+                    <i class="fa fa-cogs"></i>
+                    <h3>Software Engineering</h3>
+                </div>
+            </div>
+            <div class="card-back">
+                <i class="fa fa-cogs"></i>
+                <p>Our software engineering practices help businesses achieve scalable, high-performance solutions. We use cutting-edge technologies to build robust applications for various industries.</p>
+            </div>
+        </div>
+
+        <!-- Card 2: DevOps -->
+        <div class="card">
+            <div class="card-front">
+                <img src="img/devops.jpeg" alt="DevOps">
+                <div class="card-content">
+                    <i class="fa fa-refresh"></i>
+                    <h3>DevOps</h3>
+                </div>
+            </div>
+            <div class="card-back">
+                <i class="fa fa-refresh"></i>
+                <p>Streamline your operations with our DevOps services. We enable continuous integration, continuous deployment, and automation for improved system reliability and faster development cycles.</p>
+            </div>
+        </div>
+
+        <!-- Card 3: UX Design -->
+        <div class="card">
+            <div class="card-front">
+                <img src="img/ux.jpeg" alt="UX Design">
+                <div class="card-content">
+                    <i class="fa fa-pencil-alt"></i>
+                    <h3>UX Design</h3>
+                </div>
+            </div>
+            <div class="card-back">
+                <i class="fa fa-pencil-alt"></i>
+                <p>Our UX design services create intuitive and engaging user experiences. We focus on usability, accessibility, and emotional connection to ensure that your product meets the user's needs.</p>
+            </div>
+        </div>
+
+        <!-- Card 4: AI -->
+        <div class="card">
+            <div class="card-front">
+                <img src="img/ai.jpeg" alt="AI">
+                <div class="card-content">
+                    <i class="fa fa-brain"></i>
+                    <h3>AI</h3>
+                </div>
+            </div>
+            <div class="card-back">
+                <i class="fa fa-brain"></i>
+                <p>We harness the power of Artificial Intelligence to drive innovation. Our AI solutions improve business processes, enhance decision-making, and create personalized customer experiences.</p>
+            </div>
+        </div>
+
+        <!-- Card 5: IoT -->
+        <div class="card">
+            <div class="card-front">
+                <img src="img/iot.jpeg" alt="IoT">
+                <div class="card-content">
+                    <i class="fa fa-network-wired"></i>
+                    <h3>IoT</h3>
+                </div>
+            </div>
+            <div class="card-back">
+                <i class="fa fa-network-wired"></i>
+                <p>Transform your business with IoT solutions. We help you gather data from smart devices, optimize processes, and improve decision-making for smarter, more connected operations.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="our-team">
+    <h2>Our Team</h2>
+    <div class="team-container">
+        <!-- CEO and Co-Founder Card -->
+        <div class="team-card">
+            <img src="img/barrack.jpeg" alt="Erick Simba">
+            <div class="team-info">
+                <h3>Erick Simba</h3>
+                <p>CEO & Co-Founder</p>
+            </div>
+            <!-- Social Media Icons -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/ericksimba" target="_blank" class="social-icon linkedin">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.facebook.com/ericksimba" target="_blank" class="social-icon facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://twitter.com/ericksimba" target="_blank" class="social-icon twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Software Engineer Card -->
+        <div class="team-card">
+            <img src="img/malcom.jpeg" alt="Mucheru">
+            <div class="team-info">
+                <h3>Mucheru</h3>
+                <p>Software Engineer</p>
+            </div>
+            <!-- Social Media Icons -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mucheru" target="_blank" class="social-icon linkedin">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.facebook.com/mucheru" target="_blank" class="social-icon facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://twitter.com/mucheru" target="_blank" class="social-icon twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Software Engineer Card -->
+        <div class="team-card">
+            <img src="img/mato.jpeg" alt="Felix Orina">
+            <div class="team-info">
+                <h3>Felix Orina</h3>
+                <p>Software Engineer</p>
+            </div>
+            <!-- Social Media Icons -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/felixorina" target="_blank" class="social-icon linkedin">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.facebook.com/felixorina" target="_blank" class="social-icon facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://twitter.com/felixorina" target="_blank" class="social-icon twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Map Section -->
+<div class="map-container">
+    <h2>Our Location</h2>
+    <!-- Embed Google Map for Nairobi, Revlon Plaza -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.819368882354!2d36.818491774049136!3d-1.2821602987056357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d4423c2d67%3A0x776b277969e502a2!2sRevlon%20Plaza%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1737053368011!5m2!1sen!2ske"
+    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,543 @@
+
+/*health page*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Health Section Styling */
+.health {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    background-image: url(../img/health.jpg); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stacks content vertically */
+    text-align: center;
+    color: white;
+    padding: 0 20px; /* Adds padding on the sides */
+}
+
+.health-content {
+    max-width: 900px; /* Increased width of the text container */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
+    border-radius: 10px;
+    margin-bottom: 30px; /* Adds space between the content and the CTA button */
+}
+
+.health h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.health p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.cta-button {
+    background-color: #007bff;
+    color: white;
+    font-size: 1.1em;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* Healthcare - Why Choose Section Styling */
+.health-why-choose {
+    padding: 60px 40px;  /* Increased padding on left and right */
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+.health-why-choose h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #4a4a4a;  /* Lighter dark color for heading */
+}
+
+.health-why-choose p {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #4a4a4a;  /* Lighter dark color for paragraph */
+}
+
+.health-why-choose-content {
+    display: flex;
+    justify-content: center;  /* Centers the content */
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;  /* Ensures content will wrap on smaller screens */
+}
+
+.health-why-choose-left {
+    width: 50%;
+    text-align: left;
+    padding-right: 30px;  /* Extra padding to the right */
+}
+
+.health-why-choose-left ul {
+    list-style: none;
+    padding: 0;
+}
+
+.health-why-choose-left ul li {
+    font-size: 1.1em;
+    margin: 10px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #4a4a4a;  /* Lighter dark color for list items */
+}
+
+.health-why-choose-left ul li::before {
+    content: '\2713'; /* Unicode check mark */
+    position: absolute;
+    left: 0;
+    color: #007bff;
+    font-size: 1.4em;
+}
+
+.health-why-choose-right {
+    width: 45%;
+}
+
+.health-why-choose-right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+/* Healthcare Clients Section Styling */
+.healthcare-clients {
+    padding: 60px 40px;
+    text-align: center;
+    background-color: #f8f9fa;  /* Light background */
+    color: #4a4a4a;  /* Light dark color for text */
+}
+
+.healthcare-clients h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #007bff; /* Blue color for the heading */
+}
+
+.healthcare-clients p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #4a4a4a;  /* Light dark color for text */
+}
+
+.clients-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    flex-wrap: wrap;  /* Ensures logos wrap on smaller screens */
+}
+
+.client-logo {
+    max-width: 150px;
+    height: auto;
+    transition: transform 0.3s ease;
+    object-fit: contain;  /* Ensures logos don't get distorted */
+}
+
+.cta-button .btn {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.cta-button .btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* Healthcare Software Solutions Styling */
+.healthcare-solutions {
+    padding: 60px 40px;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.healthcare-solutions h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000;;
+}
+
+.healthcare-solutions p {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+.solutions-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.solution-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.solution-card:hover {
+    transform: scale(1.05);
+}
+
+.icon {
+    font-size: 2.5em;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.solution-card h3 {
+    font-size: 1.3em;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.solution-card p {
+    font-size: 0.95em;
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .solutions-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .solutions-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* CTA Section Styling */
+.cta-section {
+    background-color: #007bff;  /* Blue background */
+    color: #fff;  /* White text */
+    padding: 40px 0;
+    text-align: center;
+}
+
+.cta-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cta-content h3 {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+}
+
+.cta-button {
+    margin-left: 20px;
+}
+
+.cta-button .btn {
+    background-color: #ffffff;
+    color: #007bff;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button .btn:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .cta-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cta-button {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+}
+
+
+/* Custom Healthcare Software vs Ready to Buy Solutions */
+.comparison-section {
+    padding: 60px 40px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.comparison-section h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #000; /* Black color for the heading */
+    margin-bottom: 30px;
+}
+
+.comparison-table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-top: 3px solid #007bff;
+    border-bottom: 3px solid #007bff;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 15px;
+    text-align: left;
+    font-size: 1em;
+    color: #4a4a4a;
+    vertical-align: top;
+}
+
+.comparison-table th {
+    background-color: #007bff;
+    color: white;
+    border-bottom: 2px solid #007bff;
+}
+
+.comparison-table td {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.comparison-table tr:nth-child(even) td {
+    background-color: #f1f1f1;
+}
+
+.comparison-table h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.comparison-table ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.comparison-table li {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.comparison-table .tick {
+    color: green;
+    margin-right: 10px;
+}
+
+.comparison-table .cross {
+    color: red;
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .comparison-table {
+        width: 100%;
+    }
+
+    .comparison-table th, .comparison-table td {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+}
+
+
+/* Advanced Technologies Section */
+.advanced-technologies {
+    padding: 60px 100px; /* Increased padding on left and right */
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.advanced-technologies h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #2c2d2e; /* Black color for the heading */
+    margin-bottom: 30px;
+}
+
+.technologies-container {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.tech-image {
+    width: 40%;
+    text-align: center;
+}
+
+.tech-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.tech-list {
+    width: 50%;
+    text-align: left;
+}
+
+.tech-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tech-list li {
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+.tech-list .tick {
+    color: green;
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .technologies-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tech-image, .tech-list {
+        width: 100%;
+    }
+
+    .tech-list ul {
+        padding-left: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

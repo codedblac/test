@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Healthcare Software Solutions</title>
+    <link rel="stylesheet" href="health.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+     <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .dummy-content {
+            height: 1500px;
+            background-color: #e0e0e0;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        /* Navbar Styles */
+        #navbar {
+            position: fixed;
+            top: -60px; /* Initially hide the navbar */
+            width: 100%;
+            background-color: rgba(51, 51, 51, 0.7); /* Translucent black background */
+            transition: top 0.3s; /* Smooth transition */
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px; /* Add space around the navbar */
+            box-sizing: border-box; /* Ensure padding doesn't affect width */
+        }
+
+        /* Logo on the left */
+        #navbar .logo img {
+            width: 40px; /* Logo size */
+            height: auto;
+            cursor: pointer;
+        }
+
+        /* Center the navigation links */
+        #navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Center the nav items */
+            gap: 20px; /* Space between links */
+            flex-grow: 1; /* Make sure it grows to fill available space */
+        }
+
+        #navbar ul li {
+            display: inline;
+        }
+
+        #navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold; /* Make nav links bold */
+            transition: color 0.3s ease; /* Smooth color transition on hover */
+        }
+
+        /* Hover effect for the navigation links */
+        #navbar ul li a:hover {
+            color: blue; /* Change color to blue when hovered */
+        }
+
+        /* "Get Started" button on the right */
+        #navbar .get-started {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for color changes */
+        }
+
+        /* Hover effect for the "Get Started" button */
+        #navbar .get-started:hover {
+            background-color: white; /* Change background color to white on hover */
+            color: red; /* Change text color to red on hover for better contrast */
+        }
+
+        #navbar.show {
+            top: 0; /* Show the navbar */
+        }
+
+        /* Hamburger Menu for Mobile */
+        #navbar .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        #navbar .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+        }
+
+        /* Mobile menu styles */
+        #navbar ul.mobile {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background-color: rgba(51, 51, 51, 0.9);
+            text-align: center;
+        }
+
+        #navbar ul.mobile li {
+            padding: 15px;
+            width: 100%;
+        }
+
+        #navbar ul.mobile li a {
+            font-size: 20px;
+        }
+
+        /* Media Query for Mobile */
+        @media screen and (max-width: 768px) {
+            #navbar ul {
+                display: none; /* Hide the links by default */
+                flex-direction: column;
+                width: 100%;
+                background-color: rgba(51, 51, 51, 0.9);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                text-align: center;
+            }
+
+            #navbar .hamburger {
+                display: flex; /* Show the hamburger icon on mobile */
+            }
+
+            #navbar.show-mobile ul {
+                display: flex; /* Show the mobile menu when toggled */
+            }
+        }
+    </style>
+</head>
+<body>
+
+ <!-- Navbar -->
+    <nav id="navbar">
+        <div class="logo">
+            <a href="home.html"><img src="img/logo.png" alt="Logo"></a>
+        </div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+        <a href="contacts.html" class="get-started">Get Started</a>
+        <!-- Hamburger Icon -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <!-- JavaScript to handle the scroll behavior and menu toggle -->
+    <script>
+        // Get the navbar element
+        const navbar = document.getElementById("navbar");
+        const hamburger = document.querySelector(".hamburger");
+        const menu = navbar.querySelector("ul");
+
+        // Add a scroll event listener to the window
+        let prevScrollPos = window.pageYOffset;
+        window.onscroll = function() {
+            let currentScrollPos = window.pageYOffset;
+
+            // If the user scrolls down, hide the navbar
+            if (prevScrollPos > currentScrollPos) {
+                navbar.classList.add("show");  // Show the navbar
+            } else {
+                navbar.classList.remove("show");  // Hide the navbar
+            }
+
+            prevScrollPos = currentScrollPos;
+        };
+
+        // Toggle mobile menu visibility
+        function toggleMenu() {
+            navbar.classList.toggle("show-mobile");
+        }
+    </script>
+
+
+
+    <!-- Hero Section -->
+    <section class="health">
+        <div class="health-content">
+            <h1>Healthcare Software Development Services & Solutions</h1>
+            <p>Automate your operations, create opportunities for innovation, and deliver more efficient, accurate, and patient-centered healthcare.</p>
+        </div>
+        <a href="contacts.html" class="cta-button">Talk to Us</a>
+    </section>
+
+
+<!-- Why Choose Healthcare Section -->
+<section class="health-why-choose">
+    <h2>Why choose TechnoPick for your healthcare software development project?</h2>
+    <p>TechnoPick recognizes emerging trends and offers an extensive portfolio of innovative, scalable healthcare IT solutions, specifically designed for your unique business operations and project requirements. With the cutting-edge technology in our healthcare software development services, you will be equipped to provide high quality, insight-driven healthcare.</p>
+    <div class="health-why-choose-content">
+        <div class="health-why-choose-left">
+            <ul>
+                <li>Innovative and Scalable IT Solutions</li>
+                <li>Healthcare Software Expertise</li>
+                <li>Advanced Technologies (AI, Blockchain, etc.)</li>
+                <li>Custom-Tailored Development for Your Needs</li>
+                <li>Security and Compliance-Focused</li>
+            </ul>
+        </div>
+        <div class="health-why-choose-right">
+            <img src="img/heal.webp" alt="Healthcare Solutions">
+        </div>
+    </div>
+</section>
+
+
+<!-- Healthcare Clients Section -->
+<section class="healthcare-clients">
+    <h2>Our Clients</h2>
+    <p>From patient information management systems, electronic health records (EHRs), and telehealth services to the more complex Internet of Medical Things (IoMT), TechnoPick has optimized the systems of these healthcare companies.</p>
+    <div class="clients-logos">
+        <!-- Example logos, replace with actual client logos -->
+        <img src="img/beat.svg" alt="Client 1" class="client-logo">
+        <img src="img/FHC.svg" alt="Client 2" class="client-logo">
+        <img src="img/fleet-nurse.svg" alt="Client 3" class="client-logo">
+        <img src="img/proteket.svg" alt="Client 4" class="client-logo">
+        <img src="img/pocket-dentist.svg" alt="Client 4" class="client-logo">
+        <img src="img/transplant-hero.svg" alt="Client 4" class="client-logo">
+    </div>
+    <div class="cta-button">
+        <a href="contacts.html" class="btn">Become Our Client</a>
+    </div>
+</section>
+
+
+
+<!-- Healthcare Software Solutions We Provide Section -->
+<section class="healthcare-solutions">
+    <h2>Healthcare Software Solutions We Provide</h2>
+    <p>Intellectsoft helps you streamline operations with software development services for healthcare customized to your business needs. Our output continuously improves the standards of service quality and overall customer experience you provide and enhances your digital capabilities to measure financial performance.</p>
+    <div class="solutions-container">
+        <!-- Service 1: EMR / EHR Software -->
+        <div class="solution-card">
+            <div class="icon">
+                <i class="fas fa-file-medical"></i>
+            </div>
+            <h3>EMR / EHR Software</h3>
+            <p>Our patient data solutions enable streamlined access for healthcare providers and institutions to historical records and real-time updates.</p>
+            <p>Ensure patient data accuracy with our Electronic Medical Record (EMR) software and arrive at more efficient patient-related decisions.</p>
+        </div>
+
+        <!-- Service 2: Patient Portals -->
+        <div class="solution-card">
+            <div class="icon">
+                <i class="fas fa-user-injured"></i>
+            </div>
+            <h3>Patient Portals</h3>
+            <p>Through these patient relationship management digital platforms, you can minimize paperwork, improve patient interaction, deliver personalized experiences, and boost satisfaction.</p>
+            <p>These solutions are also equipped with state-of-the-art data analytics tools that offer valuable insights to assist you in transforming and fine-tuning your organization’s connection and engagement strategies with patients.</p>
+        </div>
+
+        <!-- Service 3: Medical Image Analysis Software -->
+        <div class="solution-card">
+            <div class="icon">
+                <i class="fas fa-x-ray"></i>
+            </div>
+            <h3>Medical Image Analysis Software</h3>
+            <p>X-rays, CT Scans, MRIs, Ultrasounds, and other microscopic images contain critical information about patients’ health conditions.</p>
+            <p>Our AI-powered application extracts this efficiently and quickly to facilitate diagnosis and predict the results of medical treatment better than humans can.</p>
+        </div>
+
+        <!-- Service 4: Healthcare Mobile Apps -->
+        <div class="solution-card">
+            <div class="icon">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>Healthcare Mobile Apps</h3>
+            <p>The topnotch cross-platform mobile application development of Intellectsoft runs on multiple platforms. It reduces your costs, accelerates time-to-market, and reaches more users without loss of quality.</p>
+            <p>Most importantly, you are able to provide your users with an app that fits their OS, whether on a mobile phone or tablet.</p>
+        </div>
+
+        <!-- Service 5: Healthcare Staff Management Software -->
+        <div class="solution-card">
+            <div class="icon">
+                <i class="fas fa-users-cog"></i>
+            </div>
+            <h3>Healthcare Staff Management Software</h3>
+            <p>By reducing bottlenecks and facilitating more informed decision-making, this tool promotes greater efficiency and allows healthcare workers to focus more on patient care rather than mundane administrative tasks.</p>
+            <p>Empower your medical professionals and practitioners with a simple tool that gives them flexibility and control of schedules and workload.</p>
+        </div>
+
+        <!-- Service 6: Telemedicine Apps -->
+        <div class="solution-card">
+            <div class="icon">
+                <i class="fas fa-video"></i>
+            </div>
+            <h3>Telemedicine Apps</h3>
+            <p>Provide healthcare services remotely with our digital solutions which include consultation, diagnosis, treatment, and taking medications in a timely manner.</p>
+            <p>Such benefits are invaluable to high-risk and vulnerable individuals during emergencies or health crises like the COVID-19 pandemic.</p>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Ready to deliver better patient care Section -->
+<section class="cta-section">
+    <div class="cta-content">
+        <h3>Ready to deliver better patient care?</h3>
+        <div class="cta-button">
+            <a href="contacts.html" class="btn">Talk to Us</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Custom Healthcare Software Development vs Ready to Buy Solutions -->
+<section class="comparison-section">
+    <h2>Custom Healthcare Software Development Vs. Ready to Buy Solutions</h2>
+
+    <!-- Table comparing the two solutions -->
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Custom Healthcare Software Development</th>
+                <th>Ready to Buy Solutions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <h3>Pros</h3>
+                    <ul>
+                        <li><span class="tick">✔</span> Scalable as your business grows</li>
+                        <li><span class="tick">✔</span> Features fit business needs perfectly</li>
+                        <li><span class="tick">✔</span> Adaptable to existing tech stack</li>
+                        <li><span class="tick">✔</span> Flexible to technology updates</li>
+                        <li><span class="tick">✔</span> Full ownership and control of data</li>
+                        <li><span class="tick">✔</span> Improves key facets of your business</li>
+                        <li><span class="tick">✔</span> Post-deployment maintenance and support</li>
+                    </ul>
+                    <h3>Cons</h3>
+                    <ul>
+                        <li><span class="cross">✘</span> Higher upfront investment</li>
+                        <li><span class="cross">✘</span> Longer timeline of development</li>
+                        <li><span class="cross">✘</span> More effort required in integration with existing systems</li>
+                    </ul>
+                </td>
+                <td>
+                    <h3>Pros</h3>
+                    <ul>
+                        <li><span class="tick">✔</span> Affordable initial costs</li>
+                        <li><span class="tick">✔</span> Convenient implementation</li>
+                        <li><span class="tick">✔</span> Faster to deploy</li>
+                        <li><span class="tick">✔</span> Some integrate with existing systems</li>
+                        <li><span class="tick">✔</span> Post-deployment maintenance and support</li>
+                    </ul>
+                    <h3>Cons</h3>
+                    <ul>
+                        <li><span class="cross">✘</span> Limited customization and functionalities</li>
+                        <li><span class="cross">✘</span> Potential gaps in processes</li>
+                        <li><span class="cross">✘</span> Possible integration issues</li>
+                        <li><span class="cross">✘</span> Dependency on vendor support</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+<!-- Advanced Technologies We Use in Healthcare Software Development -->
+<section class="advanced-technologies">
+    <h2>Advanced Technologies We Use in Healthcare Software Development</h2>
+    <div class="technologies-container">
+        <!-- Left Div with Image -->
+        <div class="tech-image">
+            <img src="img/infotech.jpeg" alt="Healthcare Technology Image" class="tech-img">
+        </div>
+
+        <!-- Right Div with Technologies -->
+        <div class="tech-list">
+            <ul>
+                <li><span class="tick">✔</span> Artificial Intelligence and Machine Learning</li>
+                <li><span class="tick">✔</span> Blockchain Technology</li>
+                <li><span class="tick">✔</span> Internet of Things (IoT)</li>
+                <li><span class="tick">✔</span> Cloud Computing</li>
+                <li><span class="tick">✔</span> Telemedicine and Telehealth</li>
+                <li><span class="tick">✔</span> Big Data Analytics</li>
+                <li><span class="tick">✔</span> Mobile Health (mHealth)</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

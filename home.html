@@ -1,0 +1,1399 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .dummy-content {
+            height: 1500px;
+            background-color: #e0e0e0;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        /* Navbar Styles */
+        #navbar {
+            position: fixed;
+            top: -60px; /* Initially hide the navbar */
+            width: 100%;
+            background-color: rgba(51, 51, 51, 0.7); /* Translucent black background */
+            transition: top 0.3s; /* Smooth transition */
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px; /* Add space around the navbar */
+            box-sizing: border-box; /* Ensure padding doesn't affect width */
+        }
+
+        /* Logo on the left */
+        #navbar .logo img {
+            width: 40px; /* Logo size */
+            height: auto;
+            cursor: pointer;
+        }
+
+        /* Center the navigation links */
+        #navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Center the nav items */
+            gap: 20px; /* Space between links */
+            flex-grow: 1; /* Make sure it grows to fill available space */
+        }
+
+        #navbar ul li {
+            display: inline;
+        }
+
+        #navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold; /* Make nav links bold */
+            transition: color 0.3s ease; /* Smooth color transition on hover */
+        }
+
+        /* Hover effect for the navigation links */
+        #navbar ul li a:hover {
+            color: blue; /* Change color to blue when hovered */
+        }
+
+        /* "Get Started" button on the right */
+        #navbar .get-started {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for color changes */
+        }
+
+        /* Hover effect for the "Get Started" button */
+        #navbar .get-started:hover {
+            background-color: white; /* Change background color to white on hover */
+            color: red; /* Change text color to red on hover for better contrast */
+        }
+
+        #navbar.show {
+            top: 0; /* Show the navbar */
+        }
+
+        /* Hamburger Menu for Mobile */
+        #navbar .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        #navbar .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+        }
+
+        /* Mobile menu styles */
+        #navbar ul.mobile {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background-color: rgba(51, 51, 51, 0.9);
+            text-align: center;
+        }
+
+        #navbar ul.mobile li {
+            padding: 15px;
+            width: 100%;
+        }
+
+        #navbar ul.mobile li a {
+            font-size: 20px;
+        }
+
+        /* Media Query for Mobile */
+        @media screen and (max-width: 768px) {
+            #navbar ul {
+                display: none; /* Hide the links by default */
+                flex-direction: column;
+                width: 100%;
+                background-color: rgba(51, 51, 51, 0.9);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                text-align: center;
+            }
+
+            #navbar .hamburger {
+                display: flex; /* Show the hamburger icon on mobile */
+            }
+
+            #navbar.show-mobile ul {
+                display: flex; /* Show the mobile menu when toggled */
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+<!-- Navbar -->
+<nav id="navbar">
+    <div class="logo">
+        <a href="home.html"><img src="img/logo.png" alt="Logo"></a>
+    </div>
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+    </ul>
+    <a href="contacts.html" class="get-started">Get Started</a>
+    <!-- Hamburger Icon -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</nav>
+
+<!-- JavaScript to handle the scroll behavior and menu toggle -->
+<script>
+    // Get the navbar element
+    const navbar = document.getElementById("navbar");
+    const hamburger = document.querySelector(".hamburger");
+    const menu = navbar.querySelector("ul");
+
+    // Add a scroll event listener to the window
+    let prevScrollPos = window.pageYOffset;
+    window.onscroll = function () {
+        let currentScrollPos = window.pageYOffset;
+
+        // If the user scrolls down, hide the navbar
+        if (prevScrollPos > currentScrollPos) {
+            navbar.classList.add("show");  // Show the navbar
+        } else {
+            navbar.classList.remove("show");  // Hide the navbar
+        }
+
+        prevScrollPos = currentScrollPos;
+    };
+
+    // Toggle mobile menu visibility
+    function toggleMenu() {
+        navbar.classList.toggle("show-mobile");
+    }
+</script>
+
+
+<div class="hero">
+
+
+    <section class="background-image">
+        <!-- Content that should only appear on top of the background image -->
+        <div class="content-overlay">
+            <div class="text">
+                <h2>Great Solutions Solutions For Business</h2>
+                <br>
+                <p>From innovative startups to Fortune 500 enterprises, businesses trust us to develop, test, upgrade,
+                    and scale their digital <span class="br"></span>products. We ensure smooth growth and lasting
+                    success .</p>
+            </div>
+
+            <div class="holder">
+                <!-- Service Cards -->
+                <div class="cards">
+                    <a href="fintech.html">
+                        <i class="fa fa-credit-card" aria-hidden="true"></i>
+                        <h3>Fintech</h3>
+                    </a>
+                </div>
+                <div class="cards">
+                    <a href="health.html">
+                        <i class="fa fa-hospital" aria-hidden="true"></i>
+                        <h3>Healthcare</h3>
+                    </a>
+                </div>
+                <div class="cards">
+                    <a href="constraction.html">
+                        <i class="fas fa-hard-hat" aria-hidden="true"></i>
+                        <h3>Construction</h3>
+                    </a>
+                </div>
+                <div class="cards">
+                    <a href="edtech.html">
+                        <i class="fa fa-laptop" aria-hidden="true"></i>
+                        <h3>Edtech</h3>
+                    </a>
+                </div>
+<!--                <div class="cards">-->
+<!--                    <a href="insurance.html">-->
+<!--                        <i class="fa fa-shield-alt" aria-hidden="true"></i>-->
+<!--                        <h3>Insurance</h3>-->
+<!--                    </a>-->
+<!--                </div>-->
+            </div>
+
+
+            <a href="contacts.html">
+                <button class="cta-button">Book a Free Consultation</button>
+            </a>
+
+        </div>
+    </section>
+</div>
+
+
+<div class="why-choose-section">
+    <h2>Why Choose TechnoPick as Your Custom Software Development Partner?</h2>
+    <p>Leading software development company. With over 17 years of market experience. Present in 20 countries. Our
+        development team drives excellence, ensuring we deliver exactly what your business needs. Trusted by Fortune 500
+        giants like Intel, Luxottica, Jaguar Land Rover, and Guinness, bold mid-sized companies, and ambitious
+        startups.</p>
+
+    <div class="why-cards">
+        <div class="card">
+            <i class="fa fa-cogs" aria-hidden="true"></i>
+            <h3>Custom Icon</h3>
+            <p>Designing solutions that perfectly align with your vision and needs. Leveraging the latest technologies
+                to bring your ideas to life. No matter how ambitious they are.</p>
+        </div>
+        <div class="card">
+            <i class="fa fa-users" aria-hidden="true"></i>
+            <h3>PoC/MVP services</h3>
+            <p>Experience the power of a dedicated development team. Our experts dive deep into every aspect of your
+                project, delivering exceptional quality.</p>
+        </div>
+        <div class="card">
+            <i class="fa fa-briefcase" aria-hidden="true"></i>
+            <h3>Business Process Automation</h3>
+            <p>Choose an engagement model that fits your business. Our flexible approach ensures our partnership aligns
+                with your specific goals, budget, and objectives.</p>
+        </div>
+        <div class="card">
+            <i class="fa fa-random" aria-hidden="true"></i>
+            <h3>End-to-End System Integration</h3>
+            <p>Receive high-quality, user-centered solutions on time. We ensure your project meets expectations and
+                drives satisfaction for both your clients and end-users.</p>
+        </div>
+    </div>
+
+   <div class="cta-button-container">
+    <a href="contacts.html">
+        <button class="cta-button">See what TechnoPick can do for you</button>
+    </a>
+</div>
+
+</div>
+
+
+<div class="empower-businesses-section">
+    <h2>The Software Development Company That Empowers Businesses</h2>
+
+    <div class="empower-cards">
+        <div class="empower-card">
+            <h3>Full-Cycle Software Development</h3>
+            <p>TechnoPick has been providing full-cycle, end-to-end software development services. We help companies
+                launch their projects, adopt advanced technologies, switch to digital-first strategies, and grow their
+                businesses. With 600+ custom software solutions delivered, TechnoPick is trusted by startups, SMBs, and
+                Fortune 500 enterprises in North America, Europe, Australia, Singapore, Hong Kong, and beyond. We
+                empower our clients to deliver improved experiences to their customers and employees, gain competitive
+                advantages, and enhance internal efficiency.</p>
+        </div>
+        <div class="empower-card">
+            <h3>Comprehensive Approach</h3>
+            <p>Our comprehensive approach includes consulting, engineering, and support services. As a software
+                solutions provider, we deliver custom AI, Blockchain, IoT, mobile, and other solutions. TechnoPick
+                handles projects of any type and difficulty. From simple mobile apps to cloud-based enterprise-level
+                products. Reinforce your business with the combination of our expertise, resources, intelligence in
+                technology, and passion for delivering innovative software solutions that make a difference.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Our Clients Section -->
+<div class="our-clients-section">
+    <h2>Our Clients</h2>
+
+    <div class="clients-logos-wrapper">
+        <div class="clients-logos">
+            <!-- Repeat for 11 client logos -->
+            <div class="client-logo">
+                <img src="img/proteket.svg " alt="Client 1">
+            </div>
+            <div class="client-logo">
+                <img src="img/harkins.svg" alt="Client 2">
+            </div>
+            <div class="client-logo">
+                <img src="img/luxottica.svg" alt="Client 3">
+            </div>
+            <div class="client-logo">
+                <img src="img/mitsubishi-power.svg" alt="Client 4">
+            </div>
+            <div class="client-logo">
+                <img src="img/systima.svg" alt="Client 5">
+            </div>
+            <div class="client-logo">
+                <img src="img/intel.svg" alt="Client 6">
+            </div>
+            <div class="client-logo">
+                <img src="img/af-gruppen.svg" alt="Client 7">
+            </div>
+            <div class="client-logo">
+                <img src="img/euro-accident.svg" alt="Client 8">
+            </div>
+            <div class="client-logo">
+                <img src="img/fleet-nurse.svg" alt="Client 9">
+            </div>
+            <div class="client-logo">
+                <img src="img/harley.svg" alt="Client 10">
+            </div>
+            <div class="client-logo">
+                <img src=" img/mitsubishi-power.svg" alt="Client 11">
+            </div>
+        </div>
+    </div>
+
+    <p style="color: #2c2d2e;">Looking for cost-effective and top-flight software development services, staff
+        augmentation, or IT expert consultancy?</p>
+
+
+    <a href="contacts.html">
+    <button class="cta-button">Become Our Client</button>
+</a>
+
+</div>
+
+
+<!-- Explore Our Offers Section -->
+<div class="explore-offers-section">
+    <h2>Explore Our Offers to Launch Your Project Smoothly</h2>
+
+    <div class="offers-container">
+        <!-- Web Development -->
+        <div class="offer" onclick="toggleContent(this)">
+            <div class="offer-icon">
+                <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>Web Development</h3>
+            <span class="arrow">&#8595;</span>
+            <p class="offer-content">We build functional and engaging web products for businesses in diverse industries.
+                Our broad scope of technologies allows us to select the best-fit approach for your specific project. Our
+                engineers create progressive web apps, AR-powered e-commerce stores, and more.</p>
+        </div>
+
+        <!-- Mobile App Development -->
+        <div class="offer" onclick="toggleContent(this)">
+            <div class="offer-icon">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>Mobile App Development</h3>
+            <span class="arrow">&#8595;</span>
+            <p class="offer-content">Intellectsoft provides custom mobile development application services. Increase
+                your sales and clients’ loyalty with a stable, interactive, and high-performance mobile app.</p>
+        </div>
+
+        <!-- iOS App Development -->
+        <div class="offer" onclick="toggleContent(this)">
+            <div class="offer-icon">
+                <i class="fas fa-apple-alt"></i>
+            </div>
+            <h3>iOS App Development</h3>
+            <span class="arrow">&#8595;</span>
+            <p class="offer-content">We specialize in building native iOS applications with a focus on performance, user
+                experience, and integration with Apple’s ecosystem.</p>
+        </div>
+
+        <!-- Android App Development -->
+        <div class="offer" onclick="toggleContent(this)">
+            <div class="offer-icon">
+                <i class="fas fa-android"></i>
+            </div>
+            <h3>Android App Development</h3>
+            <span class="arrow">&#8595;</span>
+            <p class="offer-content">Our Android app development services ensure your app performs seamlessly on all
+                Android devices, with beautiful designs and smooth functionality.</p>
+        </div>
+
+        <!-- MVP for Startups and Enterprises -->
+        <div class="offer" onclick="toggleContent(this)">
+            <div class="offer-icon">
+                <i class="fas fa-cogs"></i>
+            </div>
+            <h3>MVP for Startups and Enterprises</h3>
+            <span class="arrow">&#8595;</span>
+            <p class="offer-content">Our experienced managers, business analysts, developers, and designers help
+                companies validate their business ideas with MVPs. Test your project with an MVP, collect feedback from
+                your target audience, and launch a product-market fit solution.</p>
+        </div>
+
+        <!-- Dedicated Development Teams -->
+        <div class="offer" onclick="toggleContent(this)">
+            <div class="offer-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <h3>Dedicated Development Teams</h3>
+            <span class="arrow">&#8595;</span>
+            <p class="offer-content">Increase your time-to-market speed and save significant costs with dedicated teams
+                for your development. Outsource entire projects or augment your existing team.</p>
+        </div>
+
+        <!-- Enterprise Software Development -->
+        <div class="offer" onclick="toggleContent(this)">
+            <div class="offer-icon">
+                <i class="fas fa-building"></i>
+            </div>
+            <h3>Enterprise Software Development</h3>
+            <span class="arrow">&#8595;</span>
+            <p class="offer-content">We provide API integration, enterprise software development, mobility, and digital
+                transformation services. Optimize your data management and operational efficiency.</p>
+        </div>
+
+        <!-- IT Consulting -->
+        <div class="offer" onclick="toggleContent(this)">
+            <div class="offer-icon">
+                <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <h3>IT Consulting</h3>
+            <span class="arrow">&#8595;</span>
+            <p class="offer-content">Automate your operations and achieve business goals faster with strategic IT
+                consulting to improve your software architecture and tech innovations.</p>
+        </div>
+
+        <!-- UI/UX Design -->
+        <div class="offer" onclick="toggleContent(this)">
+            <div class="offer-icon">
+                <i class="fas fa-pencil-ruler"></i>
+            </div>
+            <h3>UI/UX Design</h3>
+            <span class="arrow">&#8595;</span>
+            <p class="offer-content">We create intuitive, engaging, and responsive designs to ensure a superior customer
+                experience, with user-centric interfaces that retain users.</p>
+        </div>
+
+        <!-- QA & Testing -->
+        <div class="offer" onclick="toggleContent(this)">
+            <div class="offer-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>QA & Testing</h3>
+            <span class="arrow">&#8595;</span>
+            <p class="offer-content">We provide manual and automated quality assurance services, ensuring that your
+                software solutions meet the highest standards and perform flawlessly.</p>
+        </div>
+
+        <!-- DevOps Solutions -->
+        <div class="offer" onclick="toggleContent(this)">
+            <div class="offer-icon">
+                <i class="fas fa-cogs"></i>
+            </div>
+            <h3>DevOps Solutions</h3>
+            <span class="arrow">&#8595;</span>
+            <p class="offer-content">Automate and optimize your IT processes with DevOps services, securing your
+                business with CI/CD implementation, high-load-ready systems, and more.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleContent(element) {
+        // Toggle the 'open' class to show/hide content and rotate the arrow
+        element.classList.toggle('open');
+    }
+
+</script>
+
+
+<!-- Intelligent Software Solutions Section -->
+<div class="intelligent-solutions">
+    <h2>Intelligent Software Solutions</h2>
+
+    <div class="solutions-container">
+        <!-- Discovery Projects -->
+        <div class="solution-card">
+            <div class="solution-content">
+                <i class="fas fa-search"></i> <!-- Icon -->
+                <h3>Discovery Projects</h3> <!-- Heading -->
+                <p>Do a deep dive into your potential project, align business and technology stakeholders, and get a
+                    clear view on the resources and timeline needed to achieve its goals before investing in it.</p>
+            </div>
+        </div>
+
+        <!-- PoC/MVP Services -->
+        <div class="solution-card">
+            <div class="solution-content">
+                <i class="fas fa-flag-checkered"></i> <!-- Icon -->
+                <h3>PoC/MVP Services</h3> <!-- Heading -->
+                <p>Prototype to “fail fast” or enrich and strengthen your concept, deliver a product version for
+                    collecting feedback from early adopters, and prepare a foundation for a full-fledged roll-out.</p>
+            </div>
+        </div>
+
+        <!-- Business Process Automation -->
+        <div class="solution-card">
+            <div class="solution-content">
+                <i class="fas fa-cogs"></i> <!-- Icon -->
+                <h3>Business Process Automation</h3> <!-- Heading -->
+                <p>Automate routine and labor-intense operations across the value chain to improve overall performance,
+                    the experience of internal users, and scale operations.</p>
+            </div>
+        </div>
+
+        <!-- End-to-End System Integration -->
+        <div class="solution-card">
+            <div class="solution-content">
+                <i class="fas fa-plug"></i> <!-- Icon -->
+                <h3>End-to-End System Integration</h3> <!-- Heading -->
+                <p>Connect dots within existing systems and data landscape with APIs to unlock efficiency, eliminate
+                    siloed data, shadow IT, and error-prone manual interventions.</p>
+            </div>
+        </div>
+
+        <!-- Cloud Solutions -->
+        <div class="solution-card">
+            <div class="solution-content">
+                <i class="fas fa-cloud"></i> <!-- Icon -->
+                <h3>Cloud Solutions</h3> <!-- Heading -->
+                <p>Use our expertise in empowering businesses with trusted cloud solutions and get a scalable, flexible,
+                    and connected enterprise environment.</p>
+            </div>
+        </div>
+
+        <!-- AI/ML Solutions -->
+        <div class="solution-card">
+            <div class="solution-content">
+                <i class="fas fa-robot"></i> <!-- Icon -->
+                <h3>AI/ML Solutions</h3> <!-- Heading -->
+                <p>Empower your business with intelligent automation technologies and use our expertise in AI/ML to
+                    boost your company’s efficiency, agility, and profitability.</p>
+            </div>
+        </div>
+
+        <!-- Product Oriented Delivery (POD) -->
+        <div class="solution-card">
+            <div class="solution-content">
+                <i class="fas fa-briefcase"></i> <!-- Icon -->
+                <h3>Product Oriented Delivery (POD)</h3> <!-- Heading -->
+                <p>Get a team with an optimal blend of skills capable of delivering your product or a component in
+                    optimal time, working closely with your business, product, and tech leadership.</p>
+            </div>
+        </div>
+
+        <!-- Master Data Management -->
+        <div class="solution-card">
+            <div class="solution-content">
+                <i class="fas fa-database"></i> <!-- Icon -->
+                <h3>Master Data Management</h3> <!-- Heading -->
+                <p>Establish a golden source of corporate data to avoid costly reconciliations, eliminate waste and
+                    inconsistencies, and make your systems speak the same language.</p>
+            </div>
+        </div>
+
+        <!-- Executive and Operational Dashboards -->
+        <div class="solution-card">
+            <div class="solution-content">
+                <i class="fas fa-tachometer-alt"></i> <!-- Icon -->
+                <h3>Executive and Operational Dashboards</h3> <!-- Heading -->
+                <p>Design secure dashboards with key business, financial and operational indicators, delivered instantly
+                    with the ability to drill down to every single digit.</p>
+            </div>
+        </div>
+
+        <!-- UI/UX Design -->
+        <div class="solution-card">
+            <div class="solution-content">
+                <i class="fas fa-paint-brush"></i> <!-- Icon -->
+                <h3>UI/UX Design</h3> <!-- Heading -->
+                <p>Build a truly user-oriented digital product with an experienced team that uses clear and effective
+                    design solutions.</p>
+            </div>
+        </div>
+
+        <!-- Blockchain Development -->
+        <div class="solution-card">
+            <div class="solution-content">
+                <i class="fas fa-link"></i> <!-- Icon -->
+                <h3>Blockchain Development</h3> <!-- Heading -->
+                <p>Utilize our custom blockchain solutions to improve your current infrastructure and achieve higher
+                    levels of security, scalability, and transparency.</p>
+            </div>
+        </div>
+
+        <!-- Internet of Things -->
+        <div class="solution-card">
+            <div class="solution-content">
+                <i class="fas fa-cloud-upload-alt"></i> <!-- Icon -->
+                <h3>Internet of Things</h3> <!-- Heading -->
+                <p>Let your business benefit from secure IoT solutions that will let you gather Big Data, optimize key
+                    processes, and improve decision-making.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Testimonials Section -->
+<div class="testimonials">
+    <h2>What Our Clients Say</h2>
+
+    <div class="testimonials-slider">
+        <!-- Testimonial Card 1 -->
+        <div class="testimonial-card">
+            <div class="testimonial-image">
+                <img src="https://via.placeholder.com/80" alt="Sarah Mitchell">
+            </div>
+            <div class="testimonial-content">
+                <h3>Sarah Mitchell – Project Manager, InnovateTech</h3>
+                <p>"The software has significantly streamlined our workflow. We’re seeing improvements in productivity
+                    every day!"</p>
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonial Card 2 -->
+        <div class="testimonial-card">
+            <div class="testimonial-image">
+                <img src="https://via.placeholder.com/80" alt="Johnathan Lee">
+            </div>
+            <div class="testimonial-content">
+                <h3>Johnathan Lee – CTO, DataSolve Solutions</h3>
+                <p>"I love how intuitive the platform is. It’s made managing our operations so much easier."</p>
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonial Card 3 -->
+        <div class="testimonial-card">
+            <div class="testimonial-image">
+                <img src="https://via.placeholder.com/80" alt="Emily Clark">
+            </div>
+            <div class="testimonial-content">
+                <h3>Emily Clark – Operations Lead, GreenTech</h3>
+                <p>"The customer service team is amazing! They helped us integrate the system seamlessly."</p>
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <i class="far fa-star"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonial Card 4 -->
+        <div class="testimonial-card">
+            <div class="testimonial-image">
+                <img src="https://via.placeholder.com/80" alt="David Thomson">
+            </div>
+            <div class="testimonial-content">
+                <h3>David Thomson – CEO, CloudSphere</h3>
+                <p>"This tool has transformed the way we do business. The features are comprehensive, and it’s
+                    user-friendly."</p>
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonial Card 5 -->
+        <div class="testimonial-card">
+            <div class="testimonial-image">
+                <img src="https://via.placeholder.com/80" alt="Olivia Adams">
+            </div>
+            <div class="testimonial-content">
+                <h3>Olivia Adams – Co-Founder, NextGen Apps</h3>
+                <p>"As a startup, the flexibility and scalability of this platform have been key to our growth."</p>
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonial Card 6 -->
+        <div class="testimonial-card">
+            <div class="testimonial-image">
+                <img src="https://via.placeholder.com/80" alt="Ethan Parker">
+            </div>
+            <div class="testimonial-content">
+                <h3>Ethan Parker – VP of Technology, ByteWorks</h3>
+                <p>"The integration process was smooth, and the team was incredibly helpful throughout. Couldn’t ask for
+                    a better experience."</p>
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const testimonialSlider = document.querySelector('.testimonials-slider');
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        let currentIndex = 0;
+        const totalCards = testimonialCards.length;
+
+        // Clone the first card to create an infinite loop effect
+        testimonialSlider.innerHTML += testimonialSlider.innerHTML;
+
+        // Set the initial position of the slider (starting from the first card)
+        testimonialSlider.style.transform = `translateX(0)`;
+
+        // Function to move the slider continuously
+        function moveToNextTestimonial() {
+            currentIndex++;
+            const offset = -currentIndex * (testimonialCards[0].offsetWidth + 20); // Adjust for the gap
+            testimonialSlider.style.transition = 'transform 0.5s ease-in-out'; // Smooth transition
+
+            // If the last cloned card reaches its position, reset the position to avoid jumping
+            if (currentIndex === totalCards) {
+                setTimeout(function () {
+                    testimonialSlider.style.transition = 'none'; // Remove the transition temporarily
+                    testimonialSlider.style.transform = `translateX(0)`; // Reset to first position
+                    currentIndex = 0;
+                    setTimeout(function () {
+                        testimonialSlider.style.transition = 'transform 0.5s ease-in-out'; // Reapply the transition
+                    }, 20);
+                }, 500);
+            } else {
+                testimonialSlider.style.transform = `translateX(${offset}px)`; // Move to the next card
+            }
+        }
+
+        // Auto slide every 3 seconds
+        let autoSlide = setInterval(moveToNextTestimonial, 3000);
+
+        // Add hover effect to pause auto-slide
+        testimonialSlider.addEventListener('mouseover', function () {
+            clearInterval(autoSlide);
+        });
+
+        testimonialSlider.addEventListener('mouseleave', function () {
+            autoSlide = setInterval(moveToNextTestimonial, 3000);
+        });
+    });
+
+
+</script>
+
+
+<div class="contact-section">
+    <div class="contact-form-card">
+        <!-- Contact Form Card -->
+        <form class="contact-form">
+            <h2>Contact Us</h2>
+
+            <!-- First Name -->
+            <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name" required>
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name" required>
+            </div>
+
+            <!-- Business Email -->
+            <div class="form-group">
+                <label for="business-email">Business Email</label>
+                <input type="email" id="business-email" name="business-email" required>
+            </div>
+
+            <!-- Alternative Email -->
+            <div class="form-group">
+                <label for="alt-email">Alternative Email</label>
+                <input type="email" id="alt-email" name="alt-email">
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group">
+                <label for="phone-number">Phone Number</label>
+                <input type="tel" id="phone-number" name="phone-number" required>
+            </div>
+
+            <!-- Company -->
+            <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company">
+            </div>
+
+            <!-- Tell Us About Your Project -->
+            <div class="form-group">
+                <label for="project-description">Tell Us About Your Project</label>
+                <textarea id="project-description" name="project-description" rows="4" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <!-- What Next Section (same as previous) -->
+    <div class="what-next-container">
+        <h2>What Next</h2>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> We will review your message and get back to you within 24 hours.
+            </li>
+            <li><i class="fas fa-check-circle"></i> One of our experts will reach out to discuss your requirements.</li>
+            <li><i class="fas fa-check-circle"></i> We will schedule a consultation to understand your needs in detail.
+            </li>
+            <li><i class="fas fa-check-circle"></i> You will receive a proposal with project timelines and cost
+                estimates.
+            </li>
+            <li><i class="fas fa-check-circle"></i> Once approved, we will start working on your project immediately.
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    document.querySelector('.contact-form').addEventListener('submit', function (event) {
+        event.preventDefault();  // Prevent the form from submitting the default way
+
+        // Here you can add form validation or AJAX submission logic
+
+        alert('Form Submitted Successfully!');
+    });
+
+</script>
+
+
+<footer>
+    <div class="footer-container">
+        <!-- Services Column -->
+        <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+                <li>MVP Development</li>
+                <li>Mobile Development</li>
+                <li>Web Development</li>
+                <li>Startup & MVP Solutions</li>
+                <li>Enterprise Solutions</li>
+                <li>Dedicated Teams</li>
+                <li>IT Consulting</li>
+                <li>UI/UX Design</li>
+                <li>QA & Testing</li>
+                <li>Solution Architecture</li>
+                <li>AI Development</li>
+                <li>Custom Software Development</li>
+                <li>Outsourcing Software Development</li>
+            </ul>
+        </div>
+
+        <!-- Industries Column -->
+        <div class="footer-column">
+            <h3>Industries</h3>
+            <ul>
+                <li>Fintech</li>
+                <li>Stock Trading App Development</li>
+                <li>Insurance</li>
+                <li>Healthcare & Biotech</li>
+                <li>Healthcare App Development</li>
+                <li>Dental</li>
+                <li>Travel & Hospitality</li>
+                <li>eCommerce & Retail</li>
+                <li>Logistics & Transportation</li>
+                <li>Construction</li>
+                <li>Real Estate</li>
+            </ul>
+        </div>
+
+        <!-- Company Column -->
+        <div class="footer-column">
+            <h3>Company</h3>
+            <ul>
+                <li>About</li>
+                <li>Team</li>
+                <li>Clients</li>
+                <li>Case Study</li>
+                <li>Blog</li>
+                <li>News</li>
+                <li>eBooks</li>
+                <li>Careers</li>
+                <li>Social Responsibility</li>
+                <li>Anti-Fraud Statement</li>
+            </ul>
+        </div>
+
+        <!-- Contacts Column -->
+        <div class="footer-column">
+            <h3>Contacts</h3>
+            <ul>
+                <li>Email: <a href="mailto:info@technopick.net">mailto:info@technopick.net</a></li>
+                <li>0702795466</li>
+                <li>0714213413</li>
+                <li>Westland, Nairobi City, NRB 0100, NAIROBI</li>
+                <li><a href="mailto:info@technopick.net">Contact us</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

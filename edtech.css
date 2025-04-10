@@ -1,0 +1,445 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Hero Section */
+.edtech-hero {
+    position: relative;
+    height: 95vh; /* Full viewport height */
+    background-image: url('img/student.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stacks content vertically */
+    text-align: center;
+    color: white;
+    padding: 0 20px; /* Adds padding on the sides */
+}
+
+/* Hero Content */
+.hero-content {
+    max-width: 900px; /* Increased width of the text container */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
+    border-radius: 10px;
+    margin-bottom: 30px; /* Adds space between the content and the CTA button */
+}
+
+/* Heading Styles */
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Paragraph Styles */
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* CTA Button Wrapper */
+.cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    font-size: 1.1em;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+/* Hover Effect for CTA Button */
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* Our Custom eLearning Solutions Section */
+.elearning-solutions {
+    padding: 80px 100px; /* Adds more padding to the left and right */
+    text-align: center;
+}
+
+/* Heading */
+.elearning-solutions h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Paragraph */
+.elearning-solutions p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Solutions Container */
+.solutions-container {
+    display: flex;
+    justify-content: center; /* Centers the div horizontally */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    /*max-width: 1200px; !* Limits the container width *!*/
+    margin: 0 auto; /* Centers the container */
+}
+
+/* Left Column with Text */
+.solutions-text {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+}
+
+/* Solution Item (Text + Icon) */
+.solution-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px; /* Reduces space between the list items */
+}
+
+.solution-item i {
+    margin-right: 10px; /* Small space between icon and text */
+    font-size: 1.5rem; /* Adjust icon size */
+    color: #0a329f;
+}
+
+.solution-item p {
+    font-size: 1.1rem; /* Smaller text for the solution */
+    line-height: 1.5;
+    margin: 0; /* Removes extra margin */
+}
+
+/* Right Column with Image */
+.solutions-image {
+    flex: 1;
+    max-width: 50%;
+}
+
+.solutions-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional: adds rounded corners to the image */
+}
+
+
+
+/* General Styles for Solutions Offered Section */
+.solutions-offered {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.solution {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.solution-text {
+    flex: 1;
+    padding: 20px;
+    max-width: 50%;
+    text-align: left;
+}
+
+.solution-image {
+    flex: 1;
+    max-width: 50%;
+}
+
+.solution-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.solution-text h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.solution-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.solution-text ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.solution-text ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.solution-text i {
+    font-size: 2rem;
+    margin-right: 10px;
+    color: #007bff; /* Icon color */
+}
+
+.solution i {
+    color: #007bff; /* Icon color */
+}
+
+.solution:nth-child(even) .solution-text {
+    text-align: right; /* Align text to the right for even-numbered solutions */
+}
+
+.solution:nth-child(odd) .solution-text {
+    text-align: left; /* Align text to the left for odd-numbered solutions */
+}
+
+@media (max-width: 768px) {
+    .solution {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .solution-text, .solution-image {
+        max-width: 100%;
+    }
+}
+
+
+
+
+
+
+
+/* Base styling for mobile-first approach (for small screens) */
+body {
+    font-size: 14px; /* Example: Smaller text for mobile */
+}
+
+.construction-hero h1 {
+    font-size: 2em;
+}
+
+/* Media Query for Tablets and Larger Screens (up to 768px) */
+@media (max-width: 768px) {
+    .construction-hero h1 {
+        font-size: 2.5em;
+    }
+
+    .solutions-container {
+        flex-direction: column; /* Stack the content for smaller screens */
+        gap: 20px;
+    }
+
+    .solution img {
+        max-width: 100%;
+    }
+
+    .solution-text {
+        padding: 15px;
+    }
+}
+
+/* Media Query for Larger Screens (larger than 768px) */
+@media (min-width: 769px) {
+    .solutions-container {
+        flex-direction: row; /* Keep the items side by side on larger screens */
+        gap: 40px;
+    }
+
+    .solution img {
+        max-width: 500px; /* Make images bigger */
+    }
+
+    .solution-text {
+        padding: 30px;
+    }
+}
+
+/* Media Query for Larger Desktops and Screens (larger than 1024px) */
+@media (min-width: 1024px) {
+    .construction-hero h1 {
+        font-size: 3.5em; /* Larger font size for larger screens */
+    }
+
+    .solutions-container {
+        gap: 50px; /* More space between items */
+    }
+
+    .solution img {
+        max-width: 600px; /* Bigger images for desktop */
+    }
+
+    .solution-text {
+        max-width: 700px; /* Larger text box for larger screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

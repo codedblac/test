@@ -1,0 +1,3285 @@
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    width: 100%;
+    background-image: url(img/futuristic-office.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding-top: 60px; /* Padding to give space below the navbar */
+}
+
+/*!* Navigation Bar *!*/
+/*nav {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: space-between;*/
+/*    padding-top: 10px; !* Reduced padding-top for nav *!*/
+/*    padding-left: 10%;*/
+/*    padding-right: 10%;*/
+/*    z-index: 10;*/
+/*    position: absolute;*/
+/*    top: 10px;*/
+/*    left: 10px;*/
+/*    right: 10px;*/
+/*    background-color: rgba(255, 255, 255, 0.2); !* Translucent white background *!*/
+/*    backdrop-filter: blur(5px); !* Adds a frosted glass effect *!*/
+/*    border-radius: 30px; !* Rounded corners for the nav *!*/
+/*    overflow: hidden; !* Ensures that any content inside does not overflow *!*/
+/*}*/
+
+/*!* Logo *!*/
+/*.logo {*/
+/*    width: 80px;*/
+/*    height: auto;*/
+/*}*/
+
+/*!* Navigation List *!*/
+/*nav ul li {*/
+/*    list-style-type: none;*/
+/*    display: inline-block;*/
+/*    padding: 10px 20px;*/
+/*}*/
+
+/*nav ul li a {*/
+/*    color: white;*/
+/*    text-decoration: none;*/
+/*    font-weight: bold;*/
+/*     transition: color 1s ease, transform 0.3s ease;*/
+/*}*/
+
+/*nav ul li a:hover {*/
+/*    color: blue;*/
+/*     transform: scale(1.1);*/
+/*}*/
+
+/*button {*/
+/*    border: none;*/
+/*    background: crimson;*/
+/*    padding: 12px 30px;*/
+/*    border-radius: 30px;*/
+/*    color: white;*/
+/*    font-weight: bold;*/
+/*    font-size: 15px;*/
+/*    transition: 4s;*/
+/*}*/
+
+/*button:hover {*/
+/*    transform: scale(1.3);*/
+/*    cursor: pointer;*/
+/*}*/
+
+/* Content Overlay (Text and Cards) */
+.content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    align-items: center;
+    padding-top: 140px; /* Increased padding-top to move the entire content down */
+}
+
+/* Text Section */
+.text h2 {
+    font-size: 2.5em;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.text p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+}
+
+/* Service Cards Section */
+.holder {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px; /* Increased margin-top for more space */
+    flex-wrap: wrap;
+    z-index: 10;
+}
+
+.cards {
+    width: 135px; /* Reduced card width by 1/4 */
+    height: 165px; /* Reduced card height by 1/4 */
+    background-color: rgba(255, 255, 255, 0.2); /* Translucent background for cards */
+    border-radius: 8px;
+    padding: 8px; /* Reduced padding for the smaller card */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px); /* Adds a frosted glass effect */
+    color: white;
+    font-size: 0.9rem; /* Reduced font size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for cards */
+.cards:hover {
+    transform: translateY(-10px);
+}
+
+.cards i {
+    font-size: 2.25rem; /* Reduced icon size to 75% of original */
+    margin-bottom: 12px; /* Reduced margin */
+    color: #007BFF;
+}
+
+.cards h3 {
+    font-size: 1.2rem; /* Reduced heading size */
+    margin-bottom: 8px; /* Reduced margin */
+    font-weight: bold;
+    color: white;
+}
+
+.cards p {
+    font-size: 0.9rem; /* Reduced font size for paragraph */
+    color: white;
+}
+
+/* CTA Button */
+.cta-button {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+    margin-top: 60px;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 10px 0;
+}
+
+.footer-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.footer-links li a:hover {
+    color: #007BFF;
+}
+
+/* Why Choose Section */
+.why-choose-section {
+    padding: 60px 10%;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.why-choose-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.why-choose-section p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+}
+
+.why-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding-top: 30px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    padding: 20px;
+    width: 230px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card i {
+    font-size: 3rem;
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* The Software Development Company Section */
+.empower-businesses-section {
+    background-color: #007BFF; /* Sky Blue background for the section */
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.empower-businesses-section h2 {
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.9); /* White color for the section heading */
+    margin-bottom: 30px;
+}
+
+.empower-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding-top: 30px;
+}
+
+.empower-card {
+    background-color: rgba(173, 216, 230, 0.7); /* Light Sky Blue with transparency */
+    backdrop-filter: blur(8px); /* Adds blur to the background behind the card */
+    border-radius: 8px;
+    padding: 25px;
+    width: 45%; /* Adjusted width to fit two cards */
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    color: #fff; /* White text color for readability */
+}
+
+.empower-card:hover {
+    transform: translateY(-10px); /* Subtle lift effect on hover */
+}
+
+.empower-card h3 {
+    font-size: 1.8rem;
+    color: #fff; /* White color for card headings */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.empower-card p {
+    font-size: 1.1rem;
+    color: #fff; /* White color for card paragraphs */
+}
+
+
+/* Our Clients Section */
+.our-clients-section {
+    background-color: #f4f4f4; /* Light gray background for the clients section */
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.our-clients-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.clients-logos-wrapper {
+    overflow: hidden; /* Hide anything that overflows */
+}
+
+.clients-logos {
+    display: flex;
+    gap: 40px; /* Spacing between logos */
+    animation: scrollClients 20s linear infinite; /* Continuous scrolling */
+}
+
+.client-logo img {
+    width: 150px; /* Set width of client logos */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.client-logo img:hover {
+    transform: scale(1.1); /* Slight zoom effect when hovering over logos */
+}
+
+p {
+    font-size: 1.2rem;
+    margin-top: 30px;
+    color: #333;
+}
+
+/*.cta-button {*/
+/*    margin-top: 20px;*/
+/*    padding: 15px 40px;*/
+/*    font-size: 1.2rem;*/
+/*    background-color: #007BFF;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*    cursor: pointer;*/
+/*    transition: background-color 0.3s ease;*/
+/*}*/
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Scrolling Animation for Client Logos */
+@keyframes scrollClients {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+/* Explore Our Offers Section */
+.explore-offers-section {
+    padding: 60px 10%;
+    text-align: center;
+    background-color: #fff;
+}
+
+.explore-offers-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.offers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.offer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 30px;
+    background-color: #f0f8ff; /* Light Sky Blue */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.offer:hover {
+    transform: translateY(-5px);
+}
+
+.offer h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.offer-icon {
+    font-size: 2rem;
+    color: #007BFF;
+}
+
+.arrow {
+    font-size: 1.5rem;
+    color: #007BFF;
+    transition: transform 0.3s ease;
+}
+
+.offer-content {
+    display: none; /* Initially hidden */
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+    text-align: left;
+    width: 100%;
+}
+
+/* Show the content when clicked */
+.offer.open .offer-content {
+    display: block;
+}
+
+/* Rotate the arrow when the content is visible */
+.offer.open .arrow {
+    transform: rotate(180deg);
+}
+
+.offer.open {
+    background-color: #e6f7ff; /* Slightly darker background when open */
+}
+
+/* Intelligent Software Solutions Section */
+.intelligent-solutions {
+    padding: 60px 10%;
+    text-align: center;
+    background-color: #fff;
+}
+
+.intelligent-solutions h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.solutions-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Individual Solution Card */
+.solution-card {
+    width: 280px; /* Card width */
+    height: 380px; /* Card height */
+    background-color: #f0f8ff; /* Light Sky Blue */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.solution-card:hover {
+    transform: translateY(-10px); /* Hover effect to raise card */
+}
+
+.solution-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.solution-content i {
+    font-size: 3rem; /* Icon size */
+    margin-bottom: 15px;
+    color: #007bff; /* Icon color */
+}
+
+.solution-content h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.solution-content p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.4;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .solutions-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .solution-card {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 30px;
+    }
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 60px 10%;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* Testimonials Slider */
+.testimonials-slider {
+    display: flex;
+    overflow: hidden;
+    gap: 20px;
+    transition: transform 0.5s ease;
+}
+
+.testimonial-card {
+    min-width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.05);
+}
+
+.testimonial-image img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.testimonial-content h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.testimonial-content p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+/* Rating Stars */
+.testimonial-rating i {
+    color: #ff9900;
+    margin: 0 2px;
+    font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .testimonials-slider {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial-card {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 30px;
+    }
+}
+
+/* Contact Section Styles */
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    background-color: #007bff; /* Blue background */
+    padding: 50px;
+    color: white;
+}
+
+/* Contact Form Card */
+.contact-form-card {
+    flex: 1;
+    background-color: white;
+    color: #333;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 50px;
+}
+
+.contact-form h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #007bff;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .submit-btn {
+    background-color: #28a745; /* Green button */
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.contact-form .submit-btn:hover {
+    background-color: #218838;
+}
+
+/* What Next Section */
+.what-next-container {
+    flex: 1;
+    padding-left: 50px;
+}
+
+.what-next-container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.what-next-container ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.what-next-container li {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.what-next-container li i {
+    margin-right: 10px;
+    color: #28a745; /* Green check icon color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-form-card, .what-next-container {
+        flex: none;
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    padding: 10px;
+}
+
+.footer-column h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #007bff; /* Accent color */
+}
+
+.footer-column ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #ddd;
+}
+
+.footer-column li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column li a:hover {
+    color: #007bff; /* Hover color */
+}
+
+/* Footer responsive styling */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        min-width: 100%;
+        text-align: center;
+    }
+
+    .footer-column h3 {
+        font-size: 1.2rem;
+    }
+
+    .footer-column li {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* About Hero Section */
+.about-hero {
+    height: 100vh; /* Full viewport height */
+    background-image: url('img/mjini.jpg'); /* Add your background image path */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    color: #062477; /* Ensures text is white for contrast */
+    padding: 20px;
+}
+
+.about-content {
+    max-width: 800px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.41); /* Semi-transparent background for better text visibility */
+    border-radius: 15px; /* Rounded corners */
+}
+
+.about-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+     color: rgba(255, 255, 255, 0.9);
+}
+
+
+
+/* Mission & Vision Section */
+.mission-vision {
+    text-align: center;
+    padding: 60px 20px; /* Add some padding for spacing */
+    background-color: #f4f4f4; /* Light background color for the section */
+}
+
+.mission-vision h2 {
+    font-size: 2.5rem; /* Heading size */
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333; /* Dark color for the heading */
+}
+
+.mission-vision p {
+    font-size: 1.2rem; /* Adjust text size */
+    line-height: 1.8;
+    max-width: 800px; /* Control width for readability */
+    margin: 0 auto; /* Center the paragraph */
+    color: #555; /* Dark gray color for the text */
+}
+
+/* Optional: For responsive design */
+@media (max-width: 768px) {
+    .mission-vision h2 {
+        font-size: 2rem; /* Slightly smaller heading on smaller screens */
+    }
+
+    .mission-vision p {
+        font-size: 1.1rem; /* Smaller text size for better fit on mobile devices */
+    }
+}
+
+/* Technology Excellence Section */
+.technology-excellence {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f9f9f9; /* Light background for the section */
+}
+
+.technology-excellence h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Card Container */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Ensure cards wrap in multiple rows on small screens */
+    padding: 20px;
+}
+
+/* Individual Card */
+.card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    perspective: 1000px; /* 3D effect for flipping */
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+/* Card Front */
+.card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide the back content when flipped */
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.card-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.card-content i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Card Back */
+.card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #007bff; /* Blue background */
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    backface-visibility: hidden;
+    transform: rotateY(180deg); /* Initially hidden on the back */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-back i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.card:hover .card-front {
+    transform: rotateY(180deg); /* Flip the card to show the back */
+}
+
+.card:hover .card-back {
+    transform: rotateY(0deg); /* Show the back side */
+}
+
+.card-back p {
+    font-size: 1rem;
+    color: white;
+}
+
+/* No sliding effect, cards are just static in place */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of cards on smaller screens */
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .technology-excellence h2 {
+        font-size: 2rem;
+    }
+
+    .card {
+        width: 250px;
+        height: 350px;
+    }
+
+    .card-content i {
+        font-size: 2.5rem;
+    }
+
+    .card-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .card-back p {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Our Team Section */
+.our-team {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.our-team h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #041a57;
+}
+
+/* Team Container */
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Team Card */
+.team-card {
+    width: 250px;
+    height: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 40px;
+    background-color: #fff;
+    position: relative;
+    cursor: pointer;
+}
+
+.team-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.team-info {
+    padding: 20px;
+    color: #007BFF;
+}
+
+.team-info h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.team-info p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Hover Effect */
+.team-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Social Media Links */
+.social-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.social-links a {
+    color: #fff;
+    background-color: #1e43a8;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: #007bff;
+}
+
+/* Show Social Links when hovered */
+.team-card:hover .social-links {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-card {
+        width: 220px;
+        height: 320px;
+    }
+
+    .team-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .team-info p {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Map Section */
+.map-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+/* Title styling */
+.map-container h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Map Wrapper (centering and controlling map size) */
+.map-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+
+}
+
+/* Ensure the iframe is centered, fixed height, and responsive */
+.map-wrapper iframe {
+    width: 80%;  /* Make it responsive but not too wide */
+    max-width: 1000px; /* Set a max width for larger screens */
+    height: 500px; /* Increased height */
+    border: none;
+}
+
+
+
+/* Hero Section */
+.service-hero {
+  background-image: url('img/office.png'); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Adjust height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white; /* Text color */
+  padding: 0 20px;
+}
+
+/* Content inside the hero */
+.hero-content {
+  max-width: 800px; /* Limit the width of content */
+  padding: 20px;
+}
+
+/* Heading style */
+.service-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Paragraph style */
+.service-hero p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+    color: white;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.services-section {
+    text-align: center;
+    margin: 50px 15%;
+}
+
+.services-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.services-section p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 0 10%;
+}
+
+.service-card {
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    height: 300px; /* Fixed height for cards */
+    overflow: hidden; /* Prevent content from overflowing */
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    cursor: pointer;
+    transform: scale(1.05); /* Optional, adds a hover scale effect */
+    background-color: #007bff; /* Change the background to blue on hover */
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: #007bff; /* Icon color */
+}
+
+.service-heading {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #007bff; /* Heading color */
+}
+
+.service-description {
+    font-size: 1rem;
+    margin: 20px 0;
+    color: #777;
+    transition: opacity 0.3s ease, visibility 0.3s ease, margin-bottom 0.3s ease;
+}
+
+.hover-list {
+    display: none; /* Hide the list initially */
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    color: #fff;
+    text-align: left;
+    background-color: #007bff; /* Blue background for list */
+    padding: 20px;
+    border-radius: 8px;
+    height: 100%; /* Ensure the list fills the card */
+}
+
+.service-card:hover .hover-list {
+    display: block; /* Show the list when hovered */
+}
+
+.service-card:hover .service-description {
+    opacity: 0; /* Fades out the description */
+    visibility: hidden; /* Completely hide the description */
+    margin-bottom: 0; /* Shrinks the margin to give more space for the list */
+}
+
+.hover-list li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* Change the color of the heading and icon to white when hovered */
+.service-card:hover .service-heading,
+.service-card:hover .service-icon {
+    color: white;
+}
+
+/* Mobile Devices (Portrait) */
+@media (max-width: 768px) {
+    .services-section {
+        margin: 20px 5%; /* Adjust margins for mobile */
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr; /* Stack the cards vertically on small screens */
+    }
+
+    .service-card {
+        height: auto; /* Let the height adjust based on content */
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .service-heading {
+        font-size: 1.3rem; /* Adjust heading size */
+    }
+
+    .service-description {
+        font-size: 0.9rem; /* Adjust description font size */
+    }
+
+    .service-icon {
+        font-size: 2.5rem; /* Adjust icon size */
+    }
+}
+
+/* Tablets (Portrait) */
+@media (max-width: 1024px) {
+    .services-section {
+        margin: 20px 10%;
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet screens */
+    }
+
+    .service-card {
+        height: 350px; /* Adjust card height */
+    }
+
+    .service-heading {
+        font-size: 1.4rem;
+    }
+
+    .service-description {
+        font-size: 1rem;
+    }
+
+    .service-icon {
+        font-size: 2.8rem;
+    }
+}
+
+/* Large Screens (Desktop) */
+@media (min-width: 1200px) {
+    .services-section {
+        margin: 50px 10%; /* Add larger margins for large screens */
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for large screens */
+    }
+
+    .service-card {
+        height: 350px; /* Set height for larger screens */
+        padding: 20px;
+    }
+
+    .service-heading {
+        font-size: 1.6rem;
+    }
+
+    .service-description {
+        font-size: 1.1rem;
+    }
+
+    .service-icon {
+        font-size: 3rem;
+    }
+}
+
+
+/* Styling for the 'Why Choose Us' section */
+.why-choose-container {
+  text-align: left; /* Align the text to the left */
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px; /* Added rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.why-choose-container h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold; /* Boldened heading */
+}
+
+.why-choose-container p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  max-width: 800px; /* Added max width to avoid text stretching too much */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reasons-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex; /* Use Flexbox to align the items horizontally */
+  justify-content: flex-start; /* Align the list items to the left */
+  flex-wrap: wrap; /* Allow the list to wrap onto the next line if necessary */
+}
+
+.reasons-list li {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 20px; /* Added horizontal margin for spacing between items */
+  display: flex;
+  align-items: center;
+}
+
+.tick {
+  color: #007bff;
+  font-size: 22px;
+  margin-right: 10px; /* Slightly more space for better readability */
+}
+
+
+.results-container {
+    background-color: #1541b8; /* Blue background */
+    padding: 20px;
+    text-align: center;
+}
+
+.translucent-box {
+    background-color: rgb(34, 82, 195); /* White background with 80% opacity */
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+p {
+    font-size: 16px;
+    color: white;
+}
+
+.full-service-container {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.service-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+}
+
+.service {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 30%;
+    min-width: 250px;
+}
+
+.icon {
+    font-size: 40px;
+    color: #007BFF;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .service-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
+        width: 80%; /* Services will stack and take 80% width */
+        margin-bottom: 20px;
+    }
+}
+
+
+
+/*fintech*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.fintech-hero {
+    background-image: url('img/bsw.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.fintech-hero-content {
+    background-color: rgba(0, 0, 0, 0.01); /* Semi-transparent overlay for better text visibility */
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 90%;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: white;
+}
+
+.cta-button {
+    background-color: #ff5c39; /* Button color */
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e04f28; /* Darker button color on hover */
+}
+
+
+/* Overall section styling */
+.fintech-services {
+    padding: 50px 0;
+    background-color: #f4f7fa;
+    text-align: center;
+}
+
+.fintech-services h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Container for all service cards */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;  /* Reduced the space between divs */
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Individual service card styling */
+.service-card {
+    background-color: #e0f0ff; /* Pale blue background */
+    border-radius: 10px;
+    padding: 20px;  /* Reduced padding for a more compact design */
+    width: 560px;   /* Set the width to 560px */
+    height: 400px;  /* Set the height to 400px */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;  /* Align text to the left */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between; /* Space out the content */
+    gap: 10px; /* Space between each element */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(50px); /* Start position for slide-in */
+}
+
+/* Service icon */
+.service-icon {
+    font-size: 50px; /* Increased icon size */
+    color: #0056b3;
+    align-self: center; /* Center icon horizontally */
+    margin-bottom: 10px; /* Margin between icon and heading */
+}
+
+/* Heading styling */
+.service-card h3 {
+    font-size: 1.25em; /* Reduced font size for heading */
+    margin-bottom: 10px; /* Reduced margin */
+    color: #333;
+    font-weight: 600;
+}
+
+/* Text paragraph styling */
+.service-card p {
+    font-size: 0.95em; /* Reduced font size for text */
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Unordered list with blue dots */
+.service-card ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: 0;
+    text-align: left;
+    margin-top: 10px; /* Reduced top margin for the list */
+}
+
+.service-card ul li {
+    font-size: 0.9em; /* Reduced font size for list items */
+    color: #333;
+    margin-bottom: 8px; /* Reduced space between list items */
+}
+
+/* Hover effect on cards */
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Keyframe animation for slide-in effect */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the animation to each card after a slight delay */
+.service-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.service-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.service-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.service-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.service-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.service-card:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+/* Ensure each service card fades in smoothly */
+.service-card {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Responsiveness: two cards per row on larger screens */
+@media screen and (min-width: 768px) {
+    .services-container {
+        justify-content: space-evenly;
+    }
+}
+
+
+/* Custom Financial Software Section */
+.custom-fintech {
+    padding: 50px 20px;
+    background-color: rgb(34, 82, 195);
+    text-align: center;
+}
+
+.custom-fintech h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+/* Container for the three divs */
+.custom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+/* Left Column - Image */
+.custom-left {
+    flex: 1;
+    max-width: 30%; /* Left div takes 30% of available space */
+    text-align: center;
+}
+
+.custom-left img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Center Column - Services List */
+.custom-center, .custom-right {
+    flex: 1;
+    max-width: 30%; /* Center and Right divs take 30% of available space */
+    text-align: left;
+}
+
+h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: black;
+}
+
+ul {
+    font-size: 1.1em;
+    color: black;
+    margin: 0;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .custom-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .custom-left, .custom-center, .custom-right {
+        max-width: 80%; /* On smaller screens, each div takes up 80% of the space */
+        margin-bottom: 30px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*!* General Reset *!*/
+/** {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    box-sizing: border-box;*/
+/*    font-family: sans-serif;*/
+/*}*/
+
+/*!* Hero Section *!*/
+/*.hero {*/
+/*    height: 100vh;*/
+/*    width: 100%;*/
+/*    background-image: url("img/futuristic-office.jpg");*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*    position: relative;*/
+/*    padding-top: 60px; !* Padding to give space below the navbar *!*/
+/*}*/
+
+/*!* Navigation Bar *!*/
+/*nav {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: space-between;*/
+/*    padding-top: 10px; !* Reduced padding-top for nav *!*/
+/*    padding-left: 10%;*/
+/*    padding-right: 10%;*/
+/*    z-index: 10;*/
+/*    position: absolute;*/
+/*    top: 10px;*/
+/*    left: 10px;*/
+/*    right: 10px;*/
+/*    background-color: rgba(255, 255, 255, 0.2); !* Translucent white background *!*/
+/*    backdrop-filter: blur(5px); !* Adds a frosted glass effect *!*/
+/*    border-radius: 30px; !* Rounded corners for the nav *!*/
+/*    overflow: hidden; !* Ensures that any content inside does not overflow *!*/
+/*}*/
+
+/*!* Logo *!*/
+/*.logo {*/
+/*    width: 80px;*/
+/*    height: auto;*/
+/*}*/
+
+/*!* Navigation List *!*/
+/*nav ul li {*/
+/*    list-style-type: none;*/
+/*    display: inline-block;*/
+/*    padding: 10px 20px;*/
+/*}*/
+
+/*nav ul li a {*/
+/*    color: white;*/
+/*    text-decoration: none;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*nav ul li a:hover {*/
+/*    color: blue;*/
+/*    transition: 3s;*/
+/*}*/
+
+/*button {*/
+/*    border: none;*/
+/*    background: crimson;*/
+/*    padding: 12px 30px;*/
+/*    border-radius: 30px;*/
+/*    color: white;*/
+/*    font-weight: bold;*/
+/*    font-size: 15px;*/
+/*    transition: 4s;*/
+/*}*/
+
+/*button:hover {*/
+/*    transform: scale(1.3);*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*!* Content Overlay (Text and Cards) *!*/
+/*.content-overlay {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    bottom: 0;*/
+/*    text-align: center;*/
+/*    z-index: 10;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: flex-start; !* Align content to the top *!*/
+/*    align-items: center;*/
+/*    padding-top: 120px; !* Increased padding to push content below navbar *!*/
+/*}*/
+
+/*!* Text Section *!*/
+/*.text h2 {*/
+/*    font-size: 2.5em;*/
+/*    margin-bottom: 1rem;*/
+/*    color: white;*/
+/*}*/
+
+/*.text p {*/
+/*    font-size: 1.2rem;*/
+/*    max-width: 800px;*/
+/*    margin: 0 auto;*/
+/*    color: white;*/
+/*}*/
+
+/*!* Service Cards Section *!*/
+/*.holder {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    gap: 20px;*/
+/*    margin-top: 30px; !* Increased margin-top for more space *!*/
+/*    flex-wrap: wrap;*/
+/*    z-index: 10;*/
+/*}*/
+
+/*.cards {*/
+/*    width: 135px; !* Reduced card width *!*/
+/*    height: 165px; !* Reduced card height *!*/
+/*    background-color: rgba(255, 255, 255, 0.2); !* Translucent background for cards *!*/
+/*    border-radius: 8px;*/
+/*    padding: 10px;*/
+/*    text-align: center;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    backdrop-filter: blur(5px); !* Adds a frosted glass effect *!*/
+/*    color: white;*/
+/*    font-size: 1.1rem;*/
+/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+/*    transition: transform 0.3s ease;*/
+/*}*/
+
+/*!* Hover effect for cards *!*/
+/*.cards:hover {*/
+/*    transform: translateY(-10px);*/
+/*}*/
+
+/*.cards i {*/
+/*    font-size: 2.5rem;*/
+/*    margin-bottom: 12px;*/
+/*    color: #007BFF;*/
+/*}*/
+
+/*.cards h3 {*/
+/*    font-size: 1.2rem;*/
+/*    margin-bottom: 8px;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*.cards p {*/
+/*    font-size: 0.9rem;*/
+/*    color: white;*/
+/*}*/
+
+/*!* CTA Button *!*/
+/*.cta-button {*/
+/*    padding: 15px 40px;*/
+/*    font-size: 1.2rem;*/
+/*    background-color: #007BFF;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*    cursor: pointer;*/
+/*    transition: background-color 0.3s ease;*/
+/*    z-index: 10;*/
+/*    margin-top: 60px; !* Increased margin-top to move button further down *!*/
+/*}*/
+
+/*.cta-button + br {*/
+/*    margin-bottom:20px; !* Reduce space below the CTA button *!*/
+/*}*/
+
+/*.cta-button:hover {*/
+/*    background-color: #0056b3;*/
+/*}*/
+
+/*!* Footer *!*/
+/*footer {*/
+/*    background-color: #222;*/
+/*    color: white;*/
+/*    padding: 20px 0;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.footer-content p {*/
+/*    margin: 10px 0;*/
+/*}*/
+
+/*.footer-links {*/
+/*    list-style-type: none;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    gap: 15px;*/
+/*}*/
+
+/*.footer-links li a {*/
+/*    color: white;*/
+/*    text-decoration: none;*/
+/*    font-size: 1rem;*/
+/*}*/
+
+/*.footer-links li a:hover {*/
+/*    color: #007BFF;*/
+/*}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*!* General Reset *!*/
+/** {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    box-sizing: border-box;*/
+/*    font-family: sans-serif;*/
+/*}*/
+
+/*!* Hero Section *!*/
+/*.hero {*/
+/*    height: 100vh;*/
+/*    width: 100%;*/
+/*    background-image: url("img/futuristic-office.jpg");*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*    position: relative;*/
+/*    padding-top: 60px; !* Reduced padding-top for nav *!*/
+/*}*/
+
+/*!* Navigation Bar *!*/
+/*nav {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: space-between;*/
+/*    padding-top: 10px; !* Reduced padding-top for nav *!*/
+/*    padding-left: 10%;*/
+/*    padding-right: 10%;*/
+/*    z-index: 10;*/
+/*    position: absolute;*/
+/*    top: 10px;*/
+/*    left: 10px;*/
+/*    right: 10px;*/
+/*    background-color: rgba(255, 255, 255, 0.2); !* Translucent white background *!*/
+/*    backdrop-filter: blur(5px); !* Adds a frosted glass effect *!*/
+/*    border-radius: 30px; !* Rounded corners for the nav *!*/
+/*    overflow: hidden; !* Ensures that any content inside does not overflow *!*/
+/*}*/
+
+/*!* Logo *!*/
+/*.logo {*/
+/*    width: 80px;*/
+/*    height: auto;*/
+/*}*/
+
+/*!* Navigation List *!*/
+/*nav ul li {*/
+/*    list-style-type: none;*/
+/*    display: inline-block;*/
+/*    padding: 10px 20px;*/
+/*}*/
+
+/*nav ul li a {*/
+/*    color: white;*/
+/*    text-decoration: none;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*nav ul li a:hover {*/
+/*    color: blue;*/
+/*    transition: 3s;*/
+/*}*/
+
+/*button {*/
+/*    border: none;*/
+/*    background: crimson;*/
+/*    padding: 12px 30px;*/
+/*    border-radius: 30px;*/
+/*    color: white;*/
+/*    font-weight: bold;*/
+/*    font-size: 15px;*/
+/*    transition: 4s;*/
+/*}*/
+
+/*button:hover {*/
+/*    transform: scale(1.3);*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*!* Content Overlay (Text and Cards) *!*/
+/*.content-overlay {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    bottom: 0;*/
+/*    text-align: center;*/
+/*    z-index: 10;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+/*!* Text Section *!*/
+/*.text h2 {*/
+/*    font-size: 2.5em; !* Reduced the font size to prevent overlap *!*/
+/*    margin-bottom: 1rem;*/
+/*    color: white;*/
+/*}*/
+
+/*.text p {*/
+/*    font-size: 1.2rem;*/
+/*    max-width: 800px;*/
+/*    margin: 0 auto;*/
+/*    color: white;*/
+/*}*/
+
+/*!* Service Cards Section *!*/
+/*.holder {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    gap: 20px;*/
+/*    margin-top: 10px;*/
+/*    flex-wrap: wrap;*/
+/*    z-index: 10;*/
+/*}*/
+
+/*.cards {*/
+/*    width: 180px; !* Reduced card width *!*/
+/*    height: 220px; !* Reduced card height *!*/
+/*    background-color: rgba(255, 255, 255, 0.2); !* Translucent background for cards *!*/
+/*    border-radius: 8px;*/
+/*    padding: 10px;*/
+/*    text-align: center;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    backdrop-filter: blur(5px); !* Adds a frosted glass effect *!*/
+/*    color: white;*/
+/*    font-size: 1.1rem;*/
+/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+/*    transition: transform 0.3s ease;*/
+/*}*/
+
+/*!* Hover effect for cards *!*/
+/*.cards:hover {*/
+/*    transform: translateY(-10px);*/
+/*}*/
+
+/*.cards i {*/
+/*    font-size: 3rem;*/
+/*    margin-bottom: 15px;*/
+/*    color: #007BFF;*/
+/*}*/
+
+/*.cards h3 {*/
+/*    font-size: 1.5rem;*/
+/*    margin-bottom: 10px;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*.cards p {*/
+/*    font-size: 1rem;*/
+/*    color: white;*/
+/*}*/
+
+/*!* CTA Button *!*/
+/*.cta-button {*/
+/*    margin-top: 170px;*/
+/*    padding: 15px 40px;*/
+/*    font-size: 1.2rem;*/
+/*    background-color: #007BFF;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*    cursor: pointer;*/
+/*    transition: background-color 0.3s ease;*/
+/*    z-index: 10;*/
+/*}*/
+
+/*!* Reduce space below the CTA button *!*/
+/*.cta-button + br {*/
+/*    margin-bottom:20px; !* Reduce space below the CTA button *!*/
+/*}*/
+
+/*.cta-button:hover {*/
+/*    background-color: #0056b3;*/
+/*}*/
+
+/*!* Footer *!*/
+/*footer {*/
+/*    background-color: #222;*/
+/*    color: white;*/
+/*    padding: 20px 0;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.footer-content p {*/
+/*    margin: 10px 0;*/
+/*}*/
+
+/*.footer-links {*/
+/*    list-style-type: none;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    gap: 15px;*/
+/*}*/
+
+/*.footer-links li a {*/
+/*    color: white;*/
+/*    text-decoration: none;*/
+/*    font-size: 1rem;*/
+/*}*/
+
+/*.footer-links li a:hover {*/
+/*    color: #007BFF;*/
+/*}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*!* General Reset *!*/
+/** {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    box-sizing: border-box;*/
+/*    font-family: sans-serif;*/
+/*}*/
+
+/*!* Hero Section *!*/
+/*.hero {*/
+/*    height: 100vh;*/
+/*    width: 100%;*/
+/*    background-image: url("img/futuristic-office.jpg");*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*    position: relative;*/
+/*    padding-top: 10px; !* Adds space for the navbar *!*/
+/*}*/
+
+/*!* Navigation Bar *!*/
+/*nav {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: space-between;*/
+/*    padding-top: 40px;*/
+/*    padding-left: 10%;*/
+/*    padding-right: 10%;*/
+/*    z-index: 10;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*}*/
+
+/*!* Logo *!*/
+/*.logo {*/
+/*    width: 80px;*/
+/*    height: auto;*/
+/*}*/
+
+/*!* Navigation List *!*/
+/*nav ul li {*/
+/*    list-style-type: none;*/
+/*    display: inline-block;*/
+/*    padding: 10px 20px;*/
+/*}*/
+
+/*nav ul li a {*/
+/*    color: white;*/
+/*    text-decoration: none;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*nav ul li a:hover {*/
+/*    color: blue;*/
+/*    transition: 3s;*/
+/*}*/
+
+/*button {*/
+/*    border: none;*/
+/*    background: crimson;*/
+/*    padding: 12px 30px;*/
+/*    border-radius: 30px;*/
+/*    color: white;*/
+/*    font-weight: bold;*/
+/*    font-size: 15px;*/
+/*    transition: 4s;*/
+/*}*/
+
+/*button:hover {*/
+/*    transform: scale(1.3);*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*!* Content Overlay (Text and Cards) *!*/
+/*.content-overlay {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    bottom: 0;*/
+/*    text-align: center;*/
+/*    z-index: 10;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+/*!* Text Section *!*/
+/*.text h2 {*/
+/*    font-size: 2.5em; !* Reduced the font size to prevent overlap *!*/
+/*    margin-bottom: 1rem;*/
+/*    color: white;*/
+/*}*/
+
+/*.text p {*/
+/*    font-size: 1.2rem;*/
+/*    max-width: 800px;*/
+/*    margin: 0 auto;*/
+/*    color: white;*/
+/*}*/
+
+/*!* Service Cards Section *!*/
+/*.holder {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    gap: 20px;*/
+/*    margin-top: 30px;*/
+/*    flex-wrap: wrap;*/
+/*    z-index: 10;*/
+/*}*/
+
+/*.cards {*/
+/*    width: 180px; !* Reduced card width to give more space *!*/
+/*    height: 220px; !* Reduced card height *!*/
+/*    background-color: rgba(255, 255, 255, 0.2);*/
+/*    border-radius: 8px;*/
+/*    padding: 20px;*/
+/*    text-align: center;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    backdrop-filter: blur(5px);*/
+/*    color: white;*/
+/*    font-size: 1.1rem;*/
+/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+/*    transition: transform 0.3s ease;*/
+/*}*/
+
+/*!* Hover effect for cards *!*/
+/*.cards:hover {*/
+/*    transform: translateY(-10px);*/
+/*}*/
+
+/*.cards i {*/
+/*    font-size: 3rem;*/
+/*    margin-bottom: 15px;*/
+/*    color: #007BFF;*/
+/*}*/
+
+/*.cards h3 {*/
+/*    font-size: 1.5rem;*/
+/*    margin-bottom: 10px;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*.cards p {*/
+/*    font-size: 1rem;*/
+/*    color: white;*/
+/*}*/
+
+/*!* CTA Button *!*/
+/*.cta-button {*/
+/*    margin-top: 30px;*/
+/*    padding: 15px 40px;*/
+/*    font-size: 1.2rem;*/
+/*    background-color: #007BFF;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*    cursor: pointer;*/
+/*    transition: background-color 0.3s ease;*/
+/*    z-index: 10;*/
+/*}*/
+
+/*.cta-button:hover {*/
+/*    background-color: #0056b3;*/
+/*}*/
+
+
+
+
+
+
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*    box-sizing: border-box;*/
+/*    font-family: sans-serif;*/
+/*}*/
+
+/*.hero{*/
+/*    height: 100vh;*/
+/*    width:100% ;*/
+/*    background-image:url("img/futuristic-office.jpg") ;*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*}*/
+/*nav{*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: space-between;*/
+/*    padding-top: 40px;*/
+/*    padding-left: 10%;*/
+/*    padding-right: 10%;*/
+/*}*/
+/*.logo{*/
+/*    width: 80px; !* Adjust width of the logo *!*/
+/*    height: auto; !* Maintain aspect ratio *!*/
+
+/*}*/
+/*nav ul li{*/
+/*    list-style-type: none;*/
+/*    display: inline-block;*/
+/*    padding: 10px 20px;*/
+/*}*/
+/*nav ul li a{*/
+/*    color:white ;*/
+/*    text-decoration: none;*/
+/*    font-weight: bold;*/
+/*}*/
+/*nav ul li a:hover{*/
+/*    color: blue;*/
+/*    transition: 3s;*/
+
+/*}*/
+/*button{*/
+/*    border: none;*/
+/*    background: crimson;*/
+/*    padding: 12px 30px;*/
+/*    border-radius: 30px;*/
+/*    color: white;*/
+/*    font-weight: bold;*/
+/*    font-size: 15px;*/
+/*    transition: 4s;*/
+/*}*/
+/*button:hover{*/
+/*    transform: scale(1.3);*/
+/*    cursor:pointer ;*/
+/*}*/
+
+
+/*!* General Reset *!*/
+/** {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+
+
+
+/*!* General Reset *!*/
+/** {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+
+
+/*!* Content Overlay (Text and Cards) *!*/
+/*.content-overlay {*/
+/*    position: relative;*/
+/*    text-align: center; !* Centers the text inside the content-overlay *!*/
+/*    z-index: 10;*/
+/*}*/
+
+/*!* Text Centering and Font Size for h2 *!*/
+/*.text h2 {*/
+/*    font-size: 3em;  !* 3 times the normal font size *!*/
+/*    margin-bottom: 1rem;*/
+/*    color: white; !* White text color *!*/
+/*}*/
+
+/*!* Centered Text Paragraph *!*/
+/*.text p {*/
+/*    font-size: 1.2rem;*/
+/*    max-width: 800px;*/
+/*    margin: 0 auto;*/
+/*    color: white; !* White text color *!*/
+/*}*/
+
+/*!* Service Cards Section *!*/
+/*.holder {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    gap: 20px;  !* Space between cards *!*/
+/*    margin-top: 30px;*/
+/*    flex-wrap: wrap;*/
+/*    z-index: 10; !* Ensure it's above the background *!*/
+/*}*/
+
+/*.cards {*/
+/*    width: 200px;*/
+/*    height: 250px;*/
+/*    background-color: rgba(255, 255, 255, 0.2); !* Translucent effect *!*/
+/*    border-radius: 8px;*/
+/*    padding: 20px;*/
+/*    text-align: center;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    backdrop-filter: blur(5px); !* Adds a frosted glass effect *!*/
+/*    color: white; !* White text color *!*/
+/*    font-size: 1.1rem;*/
+/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); !* Subtle shadow for the cards *!*/
+/*    transition: transform 0.3s ease;*/
+/*}*/
+
+/*!* Hover effect for cards *!*/
+/*.cards:hover {*/
+/*    transform: translateY(-10px); !* Lift effect on hover *!*/
+/*}*/
+
+/*.cards i {*/
+/*    font-size: 3rem;*/
+/*    margin-bottom: 15px;*/
+/*    color: #007BFF; !* Icon color *!*/
+/*}*/
+
+/*.cards h3 {*/
+/*    font-size: 1.5rem;*/
+/*    margin-bottom: 10px;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*.cards p {*/
+/*    font-size: 1rem;*/
+/*    color: white; !* White text for descriptions *!*/
+/*}*/
+
+/*!* CTA Button *!*/
+/*.cta-button {*/
+/*    margin-top: 30px;*/
+/*    padding: 15px 40px;*/
+/*    font-size: 1.2rem;*/
+/*    background-color: #007BFF;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*    cursor: pointer;*/
+/*    transition: background-color 0.3s ease;*/
+/*    z-index: 10; !* Ensure button is above the background *!*/
+/*}*/
+
+/*.cta-button:hover {*/
+/*    background-color: #0056b3; !* Darker shade of blue *!*/
+/*}*/

@@ -1,0 +1,382 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+
+
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .dummy-content {
+            height: 1500px;
+            background-color: #e0e0e0;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        /* Navbar Styles */
+        #navbar {
+            position: fixed;
+            top: -60px; /* Initially hide the navbar */
+            width: 100%;
+            background-color: rgba(51, 51, 51, 0.7); /* Translucent black background */
+            transition: top 0.3s; /* Smooth transition */
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px; /* Add space around the navbar */
+            box-sizing: border-box; /* Ensure padding doesn't affect width */
+        }
+
+        /* Logo on the left */
+        #navbar .logo img {
+            width: 40px; /* Logo size */
+            height: auto;
+            cursor: pointer;
+        }
+
+        /* Center the navigation links */
+        #navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Center the nav items */
+            gap: 20px; /* Space between links */
+            flex-grow: 1; /* Make sure it grows to fill available space */
+        }
+
+        #navbar ul li {
+            display: inline;
+        }
+
+        #navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold; /* Make nav links bold */
+            transition: color 0.3s ease; /* Smooth color transition on hover */
+        }
+
+        /* Hover effect for the navigation links */
+        #navbar ul li a:hover {
+            color: blue; /* Change color to blue when hovered */
+        }
+
+        /* "Get Started" button on the right */
+        #navbar .get-started {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for color changes */
+        }
+
+        /* Hover effect for the "Get Started" button */
+        #navbar .get-started:hover {
+            background-color: white; /* Change background color to white on hover */
+            color: red; /* Change text color to red on hover for better contrast */
+        }
+
+        #navbar.show {
+            top: 0; /* Show the navbar */
+        }
+
+        /* Hamburger Menu for Mobile */
+        #navbar .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        #navbar .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+        }
+
+        /* Mobile menu styles */
+        #navbar ul.mobile {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background-color: rgba(51, 51, 51, 0.9);
+            text-align: center;
+        }
+
+        #navbar ul.mobile li {
+            padding: 15px;
+            width: 100%;
+        }
+
+        #navbar ul.mobile li a {
+            font-size: 20px;
+        }
+
+        /* Media Query for Mobile */
+        @media screen and (max-width: 768px) {
+            #navbar ul {
+                display: none; /* Hide the links by default */
+                flex-direction: column;
+                width: 100%;
+                background-color: rgba(51, 51, 51, 0.9);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                text-align: center;
+            }
+
+            #navbar .hamburger {
+                display: flex; /* Show the hamburger icon on mobile */
+            }
+
+            #navbar.show-mobile ul {
+                display: flex; /* Show the mobile menu when toggled */
+            }
+        }
+
+
+        /* Contact Section Styles */
+        .contact-section {
+            display: flex;
+            justify-content: space-between;
+            background-color: #007bff; /* Blue background */
+            padding: 50px;
+            color: white;
+        }
+
+        /* Contact Form Card */
+        .contact-form-card {
+            flex: 1;
+            background-color: white;
+            color: #333;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-right: 50px;
+        }
+
+        .contact-form h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #007bff;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+        }
+
+        .contact-form .submit-btn {
+            background-color: #28a745; /* Green button */
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .contact-form .submit-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Success/Error message */
+        .message {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        .message.success {
+            color: green;
+        }
+
+        .message.error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+
+<!-- Navbar -->
+    <nav id="navbar">
+        <div class="logo">
+            <a href="home.html"><img src="img/logo.png" alt="Logo"></a>
+        </div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+        <a href="contacts.html" class="get-started">Get Started</a>
+        <!-- Hamburger Icon -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <!-- JavaScript to handle the scroll behavior and menu toggle -->
+    <script>
+        // Get the navbar element
+        const navbar = document.getElementById("navbar");
+        const hamburger = document.querySelector(".hamburger");
+        const menu = navbar.querySelector("ul");
+
+        // Add a scroll event listener to the window
+        let prevScrollPos = window.pageYOffset;
+        window.onscroll = function() {
+            let currentScrollPos = window.pageYOffset;
+
+            // If the user scrolls down, hide the navbar
+            if (prevScrollPos > currentScrollPos) {
+                navbar.classList.add("show");  // Show the navbar
+            } else {
+                navbar.classList.remove("show");  // Hide the navbar
+            }
+
+            prevScrollPos = currentScrollPos;
+        };
+
+        // Toggle mobile menu visibility
+        function toggleMenu() {
+            navbar.classList.toggle("show-mobile");
+        }
+    </script>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <div class="contact-form-card">
+            <!-- Contact Form -->
+            <form class="contact-form" method="POST" action="contact.php">
+                <h2>Contact Us</h2>
+
+                <!-- First Name -->
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" required>
+                </div>
+
+                <!-- Last Name -->
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                </div>
+
+                <!-- Business Email -->
+                <div class="form-group">
+                    <label for="business-email">Business Email</label>
+                    <input type="email" id="business-email" name="business-email" required>
+                </div>
+
+                <!-- Alternative Email -->
+                <div class="form-group">
+                    <label for="alt-email">Alternative Email</label>
+                    <input type="email" id="alt-email" name="alt-email">
+                </div>
+
+                <!-- Phone Number -->
+                <div class="form-group">
+                    <label for="phone-number">Phone Number</label>
+                    <input type="tel" id="phone-number" name="phone-number" required>
+                </div>
+
+                <!-- Company -->
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company">
+                </div>
+
+                <!-- Tell Us About Your Project -->
+                <div class="form-group">
+                    <label for="project-description">Tell Us About Your Project</label>
+                    <textarea id="project-description" name="project-description" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+
+            <!-- Success/Error Message -->
+            <?php if (isset($successMessage)): ?>
+                <div class="message success"><?php echo $successMessage; ?></div>
+            <?php elseif (isset($errorMessage)): ?>
+                <div class="message error"><?php echo $errorMessage; ?></div>
+            <?php endif; ?>
+        </div>
+
+        <!-- What Next Section -->
+        <div class="what-next-container">
+            <h2>What Next</h2>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> We will review your message and get back to you within 24 hours.</li>
+                <li><i class="fas fa-check-circle"></i> One of our experts will reach out to discuss your requirements.</li>
+                <li><i class="fas fa-check-circle"></i> We will schedule a consultation to understand your needs in detail.</li>
+                <li><i class="fas fa-check-circle"></i> You will receive a proposal with project timelines and cost estimates.</li>
+                <li><i class="fas fa-check-circle"></i> Once approved, we will start working on your project immediately.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent the form from submitting the default way
+
+            // You can add any additional client-side validation or logic here
+            alert('Form Submitted Successfully!');
+        });
+    </script>
+
+</body>
+</html>

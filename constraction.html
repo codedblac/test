@@ -1,0 +1,361 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>construction</title>
+    <link rel="stylesheet" href="constractions.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+     <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .dummy-content {
+            height: 1500px;
+            background-color: #e0e0e0;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        /* Navbar Styles */
+        #navbar {
+            position: fixed;
+            top: -60px; /* Initially hide the navbar */
+            width: 100%;
+            background-color: rgba(51, 51, 51, 0.7); /* Translucent black background */
+            transition: top 0.3s; /* Smooth transition */
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px; /* Add space around the navbar */
+            box-sizing: border-box; /* Ensure padding doesn't affect width */
+        }
+
+        /* Logo on the left */
+        #navbar .logo img {
+            width: 40px; /* Logo size */
+            height: auto;
+            cursor: pointer;
+        }
+
+        /* Center the navigation links */
+        #navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Center the nav items */
+            gap: 20px; /* Space between links */
+            flex-grow: 1; /* Make sure it grows to fill available space */
+        }
+
+        #navbar ul li {
+            display: inline;
+        }
+
+        #navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold; /* Make nav links bold */
+            transition: color 0.3s ease; /* Smooth color transition on hover */
+        }
+
+        /* Hover effect for the navigation links */
+        #navbar ul li a:hover {
+            color: blue; /* Change color to blue when hovered */
+        }
+
+        /* "Get Started" button on the right */
+        #navbar .get-started {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for color changes */
+        }
+
+        /* Hover effect for the "Get Started" button */
+        #navbar .get-started:hover {
+            background-color: white; /* Change background color to white on hover */
+            color: red; /* Change text color to red on hover for better contrast */
+        }
+
+        #navbar.show {
+            top: 0; /* Show the navbar */
+        }
+
+        /* Hamburger Menu for Mobile */
+        #navbar .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        #navbar .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+        }
+
+        /* Mobile menu styles */
+        #navbar ul.mobile {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background-color: rgba(51, 51, 51, 0.9);
+            text-align: center;
+        }
+
+        #navbar ul.mobile li {
+            padding: 15px;
+            width: 100%;
+        }
+
+        #navbar ul.mobile li a {
+            font-size: 20px;
+        }
+
+        /* Media Query for Mobile */
+        @media screen and (max-width: 768px) {
+            #navbar ul {
+                display: none; /* Hide the links by default */
+                flex-direction: column;
+                width: 100%;
+                background-color: rgba(51, 51, 51, 0.9);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                text-align: center;
+            }
+
+            #navbar .hamburger {
+                display: flex; /* Show the hamburger icon on mobile */
+            }
+
+            #navbar.show-mobile ul {
+                display: flex; /* Show the mobile menu when toggled */
+            }
+        }
+    </style>
+</head>
+<body>
+
+ <!-- Navbar -->
+    <nav id="navbar">
+        <div class="logo">
+            <a href="home.html"><img src="img/logo.png" alt="Logo"></a>
+        </div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+        <a href="contacts.html" class="get-started">Get Started</a>
+        <!-- Hamburger Icon -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <!-- JavaScript to handle the scroll behavior and menu toggle -->
+    <script>
+        // Get the navbar element
+        const navbar = document.getElementById("navbar");
+        const hamburger = document.querySelector(".hamburger");
+        const menu = navbar.querySelector("ul");
+
+        // Add a scroll event listener to the window
+        let prevScrollPos = window.pageYOffset;
+        window.onscroll = function() {
+            let currentScrollPos = window.pageYOffset;
+
+            // If the user scrolls down, hide the navbar
+            if (prevScrollPos > currentScrollPos) {
+                navbar.classList.add("show");  // Show the navbar
+            } else {
+                navbar.classList.remove("show");  // Hide the navbar
+            }
+
+            prevScrollPos = currentScrollPos;
+        };
+
+        // Toggle mobile menu visibility
+        function toggleMenu() {
+            navbar.classList.toggle("show-mobile");
+        }
+    </script>
+
+
+<!-- Construction Hero Section -->
+<section class="construction-hero">
+    <div class="hero-content">
+        <h1>Construction Software Development</h1>
+        <p>TechnoPick delivers construction software development and green building solutions to future-driven companies all over the world. Our team provides top-notch industry-tailored services to drive operational efficiency and streamline business processes.</p>
+        <div class="cta-button">
+            <a href="contacts.html" class="btn">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Our Construction Software Solutions Section -->
+<section class="construction-solutions">
+    <h2>Our Construction Software Solutions</h2>
+    <p>We develop full-scale software for construction companies to help you digitalize your green building business processes, achieve operational efficiency, and drive innovation.</p>
+    <div class="solutions-container">
+        <!-- Left div with text and icons -->
+        <div class="solutions-text">
+            <div class="solution-item">
+                <i class="fa fa-cogs"></i> <!-- Example icon for ERP -->
+                <p>Enterprise Resource Planning (ERP)</p>
+            </div>
+            <div class="solution-item">
+                <i class="fa fa-tasks"></i> <!-- Example icon for Project Management -->
+                <p>Project Management</p>
+            </div>
+            <div class="solution-item">
+                <i class="fa fa-search"></i> <!-- Example icon for Inspection Management -->
+                <p>Inspection Management</p>
+            </div>
+            <div class="solution-item">
+                <i class="fa fa-users"></i> <!-- Example icon for Customer Portal -->
+                <p>Customer Portal & Partner Portal</p>
+            </div>
+            <div class="solution-item">
+                <i class="fa fa-plug"></i> <!-- Example icon for Construction Integrations -->
+                <p>Construction Integrations</p>
+            </div>
+            <div class="solution-item">
+                <i class="fa fa-chart-line"></i> <!-- Example icon for Analytics & Reporting -->
+                <p>Analytics & Reporting</p>
+            </div>
+            <div class="solution-item">
+                <i class="fa fa-laptop-house"></i> <!-- Example icon for Project Onboarding -->
+                <p>Project Onboarding and Training</p>
+            </div>
+        </div>
+
+        <!-- Right div with image -->
+        <div class="solutions-image">
+            <img src="img/lpbp.avif" alt="Construction Software Solutions"> <!-- Replace with your image -->
+        </div>
+    </div>
+</section>
+
+
+<!-- Construction Solutions Section -->
+<section class="construction-solutions">
+    <!-- First Solution -->
+    <div class="solution">
+        <!-- Image on the left, text on the right -->
+        <div class="solution-text">
+            <i class="fas fa-laptop-house icon"></i>
+            <h3>Construction ERP Software</h3>
+            <p>Build a custom solution that integrates various necessary functions in your construction business processes, including HR, accounting, project management, and others. This solution will help you automate core processes, enable seamless collaboration, and enhance decision-making to boost your project efficiency and profitability.</p>
+        </div>
+        <img src="img/erp%20cons.jpeg" alt="Construction ERP Software">
+    </div>
+
+    <!-- Second Solution -->
+    <div class="solution">
+        <!-- Text on the left, image on the right -->
+        <div class="solution-text">
+            <i class="fas fa-cogs icon"></i>
+            <h3>Construction Project Management Software</h3>
+            <p>Advanced project management and construction planning software are together a powerful tool that streamlines project operations and coordination, enhances communication as well as optimizes scheduling, planning, and resource allocation. Get a system that enables real-time task tracking, management, and budgeting and maximizes the productivity of working on complex construction projects.</p>
+        </div>
+        <img src="img/project%20man.jpg" alt="Construction Project Management Software">
+    </div>
+
+    <!-- Third Solution -->
+    <div class="solution">
+        <!-- Image on the left, text on the right -->
+        <div class="solution-text">
+            <i class="fas fa-check-circle icon"></i>
+            <h3>Inspection Management Software</h3>
+            <p>Easily conduct, assign, track, and complete inspections for effortless construction site assessment. Manage inspections with ease, minimize risks, and ensure full compliance while maintaining data security standards.</p>
+        </div>
+        <img src="img/inspect.webp" alt="Inspection Management Software">
+    </div>
+
+    <!-- Fourth Solution -->
+    <div class="solution">
+        <!-- Text on the left, image on the right -->
+        <div class="solution-text">
+            <i class="fas fa-users icon"></i>
+            <h3>Customer & Partner Portal Software</h3>
+            <p>Enhance partner and customer relationships by providing a convenient partner portal software for sharing project updates, materials, support, and information needed for a client. Interact and communicate with customers in a tailor-made, secure environment.</p>
+        </div>
+        <img src="img/cust.jpeg" alt="Customer and Partner Portal Software">
+    </div>
+
+    <!-- Fifth Solution -->
+    <div class="solution">
+        <!-- Image on the left, text on the right -->
+        <div class="solution-text">
+            <i class="fas fa-plug icon"></i>
+            <h3>Construction Integrations</h3>
+            <p>Integrate and interlink external data sources from third-party systems into the existing workflow to obtain insights into operations, improve forecasting, and streamline communications.</p>
+        </div>
+        <img src="img/interg.jpeg" alt="Construction Integrations">
+    </div>
+
+    <!-- Sixth Solution -->
+    <div class="solution">
+        <!-- Text on the left, image on the right -->
+        <div class="solution-text">
+            <i class="fas fa-chart-line icon"></i>
+            <h3>Construction Analytics & Reporting</h3>
+            <p>Collect, analyze and monitor various data points to improve business results and reduce risks. Put data at work with advanced analytics and reports.</p>
+        </div>
+        <img src="img/analytics.jpg" alt="Construction Analytics & Reporting">
+    </div>
+
+    <!-- Seventh Solution -->
+    <div class="solution">
+        <!-- Image on the left, text on the right -->
+        <div class="solution-text">
+            <i class="fas fa-book icon"></i>
+            <h3>Project Onboarding & Training</h3>
+            <p>Simplify the onboarding process and training activities with onboarding management tools and accelerate knowledge transition on any project. Standardize and streamline training programs for efficient deployment and management.</p>
+        </div>
+        <img src="img/onboard.jpg" alt="Project Onboarding & Training">
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
